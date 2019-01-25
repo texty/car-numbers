@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  width: 100%;
+  height: 100%; }
+
+#header {
+  display: flex;
+  height: 100vh; }
+  #header h1 {
+    width: 80%;
+    margin: auto; }
+
+.introduction {
+  height: 100vh; }
+
+.text-content {
+  width: 50%;
+  margin: 100px auto; }
+
+.swoopy-1, .swoopy-2, .swoopy-3 {
+  display: none; }
+
+#scroll {
+  width: 96%;
+  margin: 0 0 0 auto;
+  display: grid;
+  grid-template-columns: 50vw auto; }
+
+.scroll__graphic {
+  grid-column: 1/2;
+  width: 100% !important; }
+
+.scroll__text {
+  grid-column: 2/3;
+  width: 100%;
+  margin: 0 auto; }
+  .scroll__text p, .scroll__text h3 {
+    width: 60%;
+    margin: 10px auto; }
+
+.step {
+  margin: 50vh 0 !important; }
+
+.step-text {
+  height: auto !important; }
+
+#barChart
+#scroll {
+  position: relative; }
+
+.scroll__graphic {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0; }
+
+.chart {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex;
+  position: absolute;
+  top: 0; }
+  .chart svg {
+    margin: auto; }
+
+.scroll__text {
+  position: relative; }
+
+.step {
+  margin: 2rem auto; }
+
+.step.is-active {
+  background-color: lightgoldenrodyellow; }
+
+/*# sourceMappingURL=styles.css.map */
