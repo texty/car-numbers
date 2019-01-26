@@ -231,24 +231,9 @@ ticks.attr("class", function(d,i){
 });
 
 
-// d3.selectAll(".plate_digits").each(function(d){
-//     d3.select(this).attr("data-tippy-content", d.digits)
-// });
 
-// tippy('.plate_digits', {
-//     hideOnClick: false,
-//     delay: 0,
-//     arrow: true,
-//     inertia: true,
-//     size: 'small',
-//     duration: 0,
-//     allowHTML: true,
-//     trigger: "mouseenter",
-//     interactive: true,
-//     onShow(tip) {
-//         tip.setContent(tip.reference.getAttribute('data-tippy-content'))
-//     }
-// });
+
+
 
 
 
@@ -292,9 +277,7 @@ function step_01(){
     d3.csv("./data/chart_data_1.csv", function(data) {
         databind(data);
 
-        d3.selectAll(".plate_digits").each(function(d){
-            d3.select(this).attr("data-tippy-content", d.digits)
-        });
+       $(".tippy-popper").css("visibility", "visible")
 
     })
 
@@ -303,18 +286,6 @@ function step_01(){
 }
 
 
-function step_02(){
-
-
-
-
-
-}
-
-function step_03(){
-
-
-}
 
 
 
@@ -357,7 +328,27 @@ function databind(data) {
         .attr('fill', 'white')
         .remove();
 
+    d3.selectAll(".plate_digits").each(function(d){
+        d3.select(this).attr("data-tippy-content", d.digits)
+    });
+    
+    
 
+
+    tippy('.plate_digits', {
+        hideOnClick: false,
+        delay: 0,
+        arrow: false,
+        inertia: false,
+        size: 'small',
+        duration: 0,
+        allowHTML: true,
+        trigger: "mouseenter",
+        interactive: false,
+        onShow(tip) {
+            tip.setContent(tip.reference.getAttribute('data-tippy-content'))
+        }
+    });
 
 
 
@@ -413,6 +404,7 @@ function handleStepEnter(r) {
 
     if(r.index === 0 && r.direction === "up"){
         step_00();
+        $(".tippy-popper").css("display", "none");
         $(".swoopy-1").css("display", "none");
         $(".swoopy-2").css("display", "none");
         $(".swoopy-3").css("display", "none");
