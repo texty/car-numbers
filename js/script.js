@@ -225,6 +225,11 @@ var swoopySel3 = group.append('g')
 swoopySel3.selectAll('path').attr('marker-end', 'url(#arrow)')
 
 
+var ticks = d3.selectAll(".tick text");
+ticks.attr("class", function(d,i){
+    if(i%10 != 0) d3.select(this).remove();
+});
+
 
 // d3.selectAll(".plate_digits").each(function(d){
 //     d3.select(this).attr("data-tippy-content", d.digits)

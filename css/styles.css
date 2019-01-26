@@ -22,11 +22,17 @@ body {
 .swoopy-1, .swoopy-2, .swoopy-3 {
   display: none; }
 
+h3 {
+  margin: 100px auto 10px auto; }
+
 #scroll {
   width: 96%;
   margin: 0 0 0 auto;
   display: grid;
   grid-template-columns: 50vw auto; }
+  @media (max-width: 1024px) and (orientation: portrait) {
+    #scroll {
+      display: block; } }
 
 .scroll__graphic {
   grid-column: 1/2;
@@ -36,6 +42,11 @@ body {
   grid-column: 2/3;
   width: 100%;
   margin: 0 auto; }
+  .scroll__text p {
+    font-size: 16px; }
+    @media (max-width: 1024px) and (orientation: portrait) {
+      .scroll__text p {
+        font-size: 20px; } }
   .scroll__text p, .scroll__text h3 {
     width: 60%;
     margin: 10px auto; }
@@ -46,12 +57,21 @@ body {
 .step-text {
   height: auto !important; }
 
-table td, table th {
-  text-align: center;
-  border: 0.5px solid grey; }
-table td:nth-child(1), table th:nth-child(1) {
-  text-align: left;
-  padding-left: 3px; }
+svg#mychart .tick text {
+  font-size: 14px; }
+
+svg#barChart .tick text {
+  font-size: 11px; }
+
+table {
+  width: 90%;
+  margin: 30px auto; }
+  table td, table th {
+    text-align: center;
+    border: 0.5px solid grey; }
+  table td:nth-child(1), table th:nth-child(1) {
+    text-align: left;
+    padding-left: 3px; }
 
 /* Scrollama */
 #scroll {
@@ -61,16 +81,26 @@ table td:nth-child(1), table th:nth-child(1) {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  left: 0; }
+  left: 0;
+  z-index: 1000; }
 
 .chart {
+  z-index: 1000;
   width: 100% !important;
   height: 100% !important;
   display: flex;
   position: absolute;
   top: 0; }
+  @media (max-width: 1024px) and (orientation: portrait) {
+    .chart {
+      height: 50% !important; } }
   .chart svg {
+    z-index: 100;
+    background-color: white;
     margin: auto; }
+    @media (max-width: 1024px) and (orientation: portrait) {
+      .chart svg {
+        margin: 0 auto; } }
 
 .scroll__text {
   position: relative; }
@@ -80,5 +110,8 @@ table td:nth-child(1), table th:nth-child(1) {
 
 .step.is-active {
   background-color: lightgoldenrodyellow; }
+
+.step p {
+  z-index: -1; }
 
 /*# sourceMappingURL=styles.css.map */
