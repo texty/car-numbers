@@ -1,7 +1,7 @@
 /**
  * Created by yevheniia on 24.01.19.
  */
-
+var collection;
 var annotations =
     [
         {
@@ -124,7 +124,6 @@ var group = svg.append("g").attr("transform",
 // hh = +svg.attr("height"),
 width = 1 * width - margin.left - margin.right;
 height = 1 * height - margin.top - margin.bottom;
-
 // var svg = d3.select(".chart")
 //     .append("svg")
 //     .attr("viewBox", "0 0 800 800")
@@ -235,8 +234,6 @@ ticks.attr("class", function(d,i){
 
 
 
-
-
 // $(".tippy-popper").attr("opacity", 0);
 
 // setTimeout(step_01, 2000);
@@ -270,16 +267,34 @@ var dta;
 
 
 
-
 function step_01(){
+
+    collection = tippy('.plate_digits', {
+        hideOnClick: true,
+        theme: 'tomato',
+        delay: 0,
+        animateFill: true,
+        // arrow: true,
+        // inertia: false,
+        size: 'small',
+        duration: 0,
+        allowHTML: true,
+        trigger: "mouseenter",
+        interactive: false,
+        onShow(tip) {
+            tip.setContent(tip.reference.getAttribute('data-tippy-content'))
+        }
+    });
+
+    //
+
 
 
     d3.csv("./data/chart_data_1.csv", function(data) {
         databind(data);
-
-       $(".tippy-popper").css("visibility", "visible")
-
     })
+
+
 
 
 
@@ -331,26 +346,6 @@ function databind(data) {
     d3.selectAll(".plate_digits").each(function(d){
         d3.select(this).attr("data-tippy-content", d.digits)
     });
-    
-    
-
-
-    tippy('.plate_digits', {
-        hideOnClick: false,
-        delay: 0,
-        arrow: false,
-        inertia: false,
-        size: 'small',
-        duration: 0,
-        allowHTML: true,
-        trigger: "mouseenter",
-        interactive: false,
-        onShow(tip) {
-            tip.setContent(tip.reference.getAttribute('data-tippy-content'))
-        }
-    });
-
-
 
 }
 
@@ -370,6 +365,8 @@ var step = text.selectAll('.step');
 
 // initialize the scrollama
 var scroller = scrollama();
+
+
 
 // generic window resize listener event
 function handleResize() {
@@ -402,9 +399,13 @@ function handleResize() {
 // scrollama event handlers
 function handleStepEnter(r) {
 
+
+
     if(r.index === 0 && r.direction === "up"){
         step_00();
-        $(".tippy-popper").css("display", "none");
+        collection.destroyAll();
+
+
         $(".swoopy-1").css("display", "none");
         $(".swoopy-2").css("display", "none");
         $(".swoopy-3").css("display", "none");
@@ -412,18 +413,16 @@ function handleStepEnter(r) {
     }
 
 
-    if(r.index === 1 && r.direction === "down"){
-        $(".tippy-popper").attr("opacity", 1)
+    if(r.index === 1 && r.direction === "down") {
         step_01();
+
     }
 
     if(r.index === 1 && r.direction === "up"){
-        $(".tippy-popper").attr("opacity", 1)
         $(".swoopy-1").css("display", "none");
         $(".swoopy-2").css("display", "none");
         $(".swoopy-3").css("display", "none");
     }
-
 
 
     if(r.index === 2 && r.direction === "down"){
@@ -434,12 +433,14 @@ function handleStepEnter(r) {
         $(".swoopy-1").css("display", "block");
         $(".swoopy-2").css("display", "none");
         $(".swoopy-3").css("display", "none");
-
     }
+
+
 
     if(r.index === 3 && r.direction === "down"){
         $(".swoopy-2").css("display", "block")
     }
+
 
     if(r.index === 3 && r.direction === "up"){
         $(".swoopy-2").css("display", "block");
@@ -448,20 +449,11 @@ function handleStepEnter(r) {
 
     }
 
+
     if(r.index === 4 && r.direction === "down"){
         $(".swoopy-3").css("display", "block")
     }
 
-
-    // response = { element, direction, index }
-
-    // add color to current step only
-    // step.classed('is-active', function (d, i) {
-    //     return i === r.index;
-    // })
-
-    // update graphic based on step
-    // chart.select('p').text(r.index + 1)
 }
 
 function handleContainerEnter(response) {
@@ -472,41 +464,47 @@ function handleContainerExit(response) {
     // response = { direction }
 }
 
-// function setupStickyfill() {
-//     d3.selectAll('.sticky').each(function () {
-//         Stickyfill.add(this);
-//     });
-// }
 
 function init() {
-    // setupStickyfill();
-
-    // 1. force a resize on load to ensure proper dimensions are sent to scrollama
     handleResize();
-
-    // 2. setup the scroller passing options
-    // this will also initialize trigger observations
-    // 3. bind scrollama event handlers (this can be chained like below)
     scroller.setup({
         container: '#scroll',
         graphic: '.scroll__graphic',
         text: '.scroll__text',
         step: '.scroll__text .step',
-        debug: false,
+        debug: true,
     })
         .onStepEnter(handleStepEnter)
         .onContainerEnter(handleContainerEnter)
         .onContainerExit(handleContainerExit);
 
-    // setup resize event
     window.addEventListener('resize', handleResize);
 }
 
-// kick things off
 init();
 
+// $('#n-1').val();
+// // ^7[+\d]2[+\d]
+// $('.number-input').on('input', function() {
+//     var n1 = $("#n-1").val();
+//     var n2 = $("#n-2").val();
+//     var n3 = $("#n-3").val();
+//     var n4 = $("#n-4").val();
+//
+//      var n = n1 + n2 + n3 + n4;
+//     alert(n)
+// });
 
 
+var  numbers =  [7654, 1728, 8761, 7900 ];
+
+var regexp = /^7[+\d][+\d][+\d]/;
+
+const matchedSites = numbers.filter(function(n){
+    var myval = n.toString();
+
+    return myval.match(regexp) });
+console.log(matchedSites.length);
 
 
 
