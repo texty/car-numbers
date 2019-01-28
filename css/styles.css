@@ -162,8 +162,7 @@ body {
   height: 100%; }
 
 #header {
-  display: flex;
-  height: 100vh; }
+  height: max-content; }
   #header h1 {
     width: 80%;
     margin: auto; }
