@@ -472,7 +472,7 @@ function init() {
         graphic: '.scroll__graphic',
         text: '.scroll__text',
         step: '.scroll__text .step',
-        debug: true,
+        debug: false,
     })
         .onStepEnter(handleStepEnter)
         .onContainerEnter(handleContainerEnter)
@@ -483,28 +483,69 @@ function init() {
 
 init();
 
-// $('#n-1').val();
-// // ^7[+\d]2[+\d]
-// $('.number-input').on('input', function() {
-//     var n1 = $("#n-1").val();
-//     var n2 = $("#n-2").val();
-//     var n3 = $("#n-3").val();
-//     var n4 = $("#n-4").val();
-//
-//      var n = n1 + n2 + n3 + n4;
-//     alert(n)
-// });
+
+// ^7[+\d]2[+\d]
+$('.number-input').on('input', function() {
+    var n1 = $("#n-1").val();
+    var n2 = $("#n-2").val();
+    var n3 = $("#n-3").val();
+    var n4 = $("#n-4").val();
+
+    if (n1 === "" || isNaN(n1)) {
+        n1 = ","
+    }
+    if (n2 === ""  || isNaN(n2)) {
+        n2 = ","
+    }
+    if (n3 === "" || isNaN(n3)) {
+        n3 = ","
+    }
+    if (n4 === ""  || isNaN(n4)) {
+        n4 = ","
+    }
+
+    var n = "^" + n1 + n2 + n3 + n4;
+    n = n.replaceAll(",", "[0-9]");
+    var regexp = new RegExp(n);
+
+    d3.csv("./data/chart_data_1.csv", function (allNumbers) {
+
+        var numbers = allNumbers.filter(function (n) {
+                return (n.digits.toString()).match(regexp);
+        });
+
+        console.log(numbers);
+
+        var sumArray = numbers.map(function (n){
+            return parseInt(n.count)
+        });
+
+        var sum = sumArray.reduce(function(x, y) {
+           return x + y
+        });
 
 
-var  numbers =  [7654, 1728, 8761, 7900 ];
 
-var regexp = /^7[+\d][+\d][+\d]/;
-
-const matchedSites = numbers.filter(function(n){
-    var myval = n.toString();
-
-    return myval.match(regexp) });
-console.log(matchedSites.length);
+        $("#inputResult").html(sum)
+    });
+});
 
 
 
+
+
+
+
+
+
+
+
+
+String.prototype.replaceAll = function(character,replaceChar){
+    var word = this.valueOf();
+
+    while(word.indexOf(character) != -1)
+        word = word.replace(character,replaceChar);
+
+    return word;
+};

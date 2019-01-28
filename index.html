@@ -84,19 +84,35 @@
         <p><b>Наведіть мишею на точки графіка, аби побачити, що це за номер.</b></p>
     </div>
 
-      <div class='step step5' data-step='5' data-scrollama-index="5">
+
+      <div class='step step5' style="background-color: cornsilk" data-step='5' data-scrollama-index="5">
+          <h2>Давайте пограємось</h2>
+          <p>Введіть одну чи більше цифр з номерного знака і подивіться, скільки народу має такі цифри у номері. </p>
+
+          <div id="letPlay">
+              <input maxlength="1" id="n-1" class="number-input" style="width:40px; height: 40px; margin-right: 5px;" />
+              <input maxlength="1" id="n-2" class="number-input" style="width:40px; height: 40px; margin-right: 5px;" />
+              <input maxlength="1" id="n-3" class="number-input" style="width:40px;height: 40px; margin-right: 5px;" />
+              <input maxlength="1" id="n-4" class="number-input" style="width:40px;height: 40px;"  />
+          </div>
+
+          <div id="inputResult" style=""></div>
+
+          </div>
+
+      <div class='step step6' data-step='6' data-scrollama-index="6">
           <p style="margin-bottom: 50px">На графіку нижче ми показали 15 найбільш популярних номерів.</p>
 
           <svg id="barChart" width="100%" height="50%"></svg>
       </div>
 
-      <div class="step step-text step6" data-step="6" data-scrollama-index="6">
+      <div class="step step-text step7" data-step="7" data-scrollama-index="7">
            <p>“Найкращі” номери найчастіше можна побачити на більш дорогих машинах - тобто, такий номер на думку власника, ще більш підкреслює його “статус”.</p>
 
           <p>Припустимо, серед машин із звичайними номерами є якась кількість різних марок: “ДЕУ”, “ВАЗ”, “Тойот”, тощо. Як зміниться кількість машин різних марок, якщо взяти “красиві” номери? Якихось марок стане менше, якихось стане більше.</p>
      </div>
 
-      <div class="step step-text step7" data-step="7" data-scrollama-index="7">
+      <div class="step step-text step8" data-step="8" data-scrollama-index="8">
           <p> На таблиці ви можете побачити першу десятку лідерів зростання: яких марок стало більше серед “красивих” номерів, і у скільки разів?</p>
 
           <p>Очевидно, що багато марнославних власників дорогих машин витрачаються також на красиві номери, щоб ще більше підкреслити свій статус.</p>
@@ -186,17 +202,12 @@
 
           </div>
 
-      <div class="step step8" data-step="8" data-scrollama-index="8">
+      <div class="step step9" data-step="9" data-scrollama-index="9">
           <p>Однак, схоже що “статусність” номерів взаємопов’язана з поганою поведінкою на дорогах. І водії на “модних” номерах поводять себе на дорогах гірше. Незрозуміло, де причина, а де наслідок - однак схоже що кореляція між “красивим” номером і поганою поведінкою справді існує. Ми обробили декілька десятків тисяч даних сайту http://autocarma.ua/, на якому водії виставляють оцінки один одному.</p>
 
           <p>Для того, щоб відкинути вплив ціни авто, ми порівнювали між собою дві групи машин - дорогі марки з модними номерами (група 1), і дорогі марки із пересічними номерами (група 2). Для вибірки в 700 машин з кожної групи, середній бал першої групи (-16 балів) на три бали гірше ніж у групи на звичайних номерах (-13 балів). Цей результат статистично значущий, ймовірність отримати його випадково складає лише 0.5%</p>
 
-          <div id="letPlay">
-          <input maxlength="1" id="n-1" class="number-input" style="width:40px; height: 40px; margin-right: 5px;" />
-          <input maxlength="1" id="n-2" class="number-input" style="width:40px; height: 40px; margin-right: 5px;" />
-          <input maxlength="1" id="n-3" class="number-input" style="width:40px;height: 40px; margin-right: 5px;" />
-          <input maxlength="1" id="n-4" class="number-input" style="width:40px;height: 40px;"  />
-          </div>
+
       </div>
 
 
@@ -346,7 +357,20 @@
     <p>Зайва увага – побічний ефект статусу. Назар згоден, що переплачує за самоствердження, але нічого не може з цим вдіяти.</p>
     <p>«Може, десь на Майорці багатія впізнають за окулярами, телефоном. В Україні ж людина себе чим передусім показує? Машиною. Такий принцип дурний: якщо ти з номерами, то ти дєльний пацан».</p>
     <p>Назар веде бізнес, відпочиває в Буковелі, любить грати в більярд, ходить на дискотеки. Номери доповнюють образ «зарядженого» молодого чоловіка. Як пояснив Назар, «заряджений» – значить при грошах, заможний.</p>
+
+
+
+    <div id="button">
+        <h3>TEXTY.ORG.UA незалежне видання без навʼязливої реклами і замовних матеріалів. Щоб працювати і далі нам потрібна ваша підтримка. </h3>
+
+        <div id="button-container">
+            <button onclick="location.href='https://www.liqpay.ua/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXlkb25hdGUiLCJwdWJsaWNfa2V5IjoiaTc2NjUwNTYyODI3IiwiYW1vdW50IjoiNTAiLCJjdXJyZW5jeSI6IlVBSCIsImRlc2NyaXB0aW9uIjoi0J%2FQvtC20LXRgNGC0LLQsCIsInR5cGUiOiJkb25hdGUiLCJsYW5ndWFnZSI6InVrIn0%3D&signature=YFkd4Z74QCJXRxMTPoWm0JVlkX4%3D'" id="support-us">ПОЖЕРТВУВАТИ</button>
+        </div>
+
+    </div>
 </div>
+
+
 
 
 
@@ -362,20 +386,20 @@
 <div class="read-more" style="margin:50px 0 100px 0;">
     <h3 class="read-text"><b>Читайте також:</b></h3>
     <div class="read-more-third">
-        <a target="_blank" href="http://texty.org.ua/pg/article/editorial/read/82121/Zombiakademija_vchenipensionery_NAN_Ukrajiny_ne_vytrymujut_konkurenciji"><img style="width:90%;"
-                                                                                                                                                                   src="img/zombi.png"
-                                                                                                                                                                   class="img-responsive" alt="Зомбі-академія"></a>
+        <a target="_blank" href="http://texty.org.ua/cars/"><img style="width:90%;"
+                                                                                                                                                                   src="img/og.png"
+                                                                                                                                                                   class="img-responsive" alt="База авто"></a>
     </div>
     <div class="read-more-second">
-        <a target="_blank" href="http://texty.org.ua/pg/article/Oximets/read/83231/Jera_dynozavriv_Popry_kolyshni_dosagnenna_Instytut_kibernetyky?a_srt=1"><img style="width:90%;" src="img/kibernetika.png"
+        <a target="_blank" href="http://texty.org.ua/d/parkings/"><img style="width:90%;" src="img/parkings.png"
                                                                                                                                                                 class="img-responsive"
-                                                                                                                                                                alt="Ера динозаврів"></a>
+                                                                                                                                                                alt="Парковки"></a>
     </div>
     <div class="read-more-first">
-        <a target="_blank" href="http://texty.org.ua/pg/article/editorial/read/84562/Jak_SShA_ta_Polshha_pidtrymujut_jakisnu_nauku"><img style="width:90%;"
-                                                                                                                                         src="img/foreign.png"
+        <a target="_blank" href="http://texty.org.ua/d/auto_euro/"><img style="width:90%;"
+                                                                                                                                         src="img/euro.png"
                                                                                                                                          class="img-responsive"
-                                                                                                                                         alt="Досвід США Польщі"></a>
+                                                                                                                                         alt="Єврономери"></a>
     </div>
 </div>
 
@@ -440,7 +464,11 @@
     </div>
 </div>
 
-
+<script>
+    $(document).ready(function(){
+        $(this).scrollTop(0);
+    });
+</script>
 
 <script type="text/javascript">
     var _gaq = _gaq || [];

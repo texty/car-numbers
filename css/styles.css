@@ -200,7 +200,7 @@ h3 {
     @media (max-width: 1024px) and (orientation: portrait) {
       .scroll__text p {
         font-size: 20px; } }
-  .scroll__text p, .scroll__text h3 {
+  .scroll__text p, .scroll__text h3, .scroll__text h2 {
     width: 60%;
     margin: 10px auto; }
 
@@ -270,5 +270,38 @@ table {
 #letPlay {
   width: 60%;
   margin: auto; }
+
+#inputResult {
+  width: 60%;
+  margin: auto;
+  text-align: left;
+  font-size: 30px; }
+
+/*---------- button -------*/
+#button {
+  width: 100%;
+  /* 100% of parent container*/
+  margin: auto;
+  line-height: 1.6; }
+
+#button > h3 {
+  font-weight: 800;
+  text-align: center;
+  font-size: 18px; }
+
+#button-container {
+  width: 100%;
+  display: flex; }
+
+#support-us {
+  width: auto;
+  background-color: #ffc423 !important;
+  padding: 10px;
+  outline: none;
+  border: none;
+  font-weight: 800;
+  font-size: 18px;
+  margin: auto;
+  cursor: pointer; }
 
 /*# sourceMappingURL=styles.css.map */
