@@ -176,7 +176,7 @@ var colourScale = d3.scaleLinear()
 var swoopy1 = d3.swoopyDrag()
         .x(d => x(d.y))
 .y(d => y(d.x))
-.draggable(true)
+.draggable(false)
     .annotations(annotations);
 
 
