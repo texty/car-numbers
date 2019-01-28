@@ -1,7 +1,20 @@
 /**
  * Created by yevheniia on 24.01.19.
  */
-var collection;
+
+var chart_data;
+function retrieve_chart_data(cb) {
+    if (chart_data) return cb(chart_data);
+
+    return d3.csv("./data/chart_data_1.csv", function(err, myData){
+        if (err) throw err;
+
+        chart_data = myData;
+        if (cb) return cb(myData);
+        return;
+    })
+}
+
 var annotations =
     [
         {
@@ -99,6 +112,10 @@ var annotations3 =
 
 
     ];
+
+
+
+var collection;
 
 
 
@@ -290,9 +307,13 @@ function step_01(){
 
 
 
-    d3.csv("./data/chart_data_1.csv", function(data) {
-        databind(data);
-    })
+    retrieve_chart_data(function(myData){
+        databind(myData);
+
+    });
+    // d3.csv("./data/chart_data_1.csv", function(data) {
+    //     databind(data);
+    // })
 
 
 
@@ -472,6 +493,7 @@ function init() {
         graphic: '.scroll__graphic',
         text: '.scroll__text',
         step: '.scroll__text .step',
+        offset: 0.7,
         debug: false,
     })
         .onStepEnter(handleStepEnter)
@@ -508,7 +530,7 @@ $('.number-input').on('input', function() {
     n = n.replaceAll(",", "[0-9]");
     var regexp = new RegExp(n);
 
-    d3.csv("./data/chart_data_1.csv", function (allNumbers) {
+    retrieve_chart_data(function(allNumbers){
 
         var numbers = allNumbers.filter(function (n) {
                 return (n.digits.toString()).match(regexp);
@@ -549,3 +571,6 @@ String.prototype.replaceAll = function(character,replaceChar){
 
     return word;
 };
+
+
+
