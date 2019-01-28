@@ -183,13 +183,13 @@ var swoopy1 = d3.swoopyDrag()
 var swoopy2 = d3.swoopyDrag()
         .x(d => x(d.y))
 .y(d => y(d.x))
-.draggable(true)
+.draggable(false)
     .annotations(annotations2);
 
 var swoopy3 = d3.swoopyDrag()
         .x(d => x(d.y))
 .y(d => y(d.x))
-.draggable(true)
+.draggable(false)
     .annotations(annotations3);
 
 
