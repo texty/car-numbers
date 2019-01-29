@@ -1,4 +1,7 @@
 #logo-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: grid;
   grid-template-columns: 150px auto 80px; }
 
@@ -22,6 +25,14 @@
 .twitter {
   width: 30px;
   grid-column: 2/3; }
+
+svg#facebook {
+  z-index: 1000;
+  fill: black; }
+
+svg#twitter {
+  z-index: 1000;
+  fill: black; }
 
 a {
   color: white; }
@@ -264,6 +275,9 @@ table {
   top: 0;
   left: 0;
   z-index: 1000; }
+  @media (max-width: 1024px) and (orientation: portrait) {
+    .scroll__graphic {
+      top: 5px; } }
 
 .chart {
   z-index: 1000;
