@@ -4,6 +4,12 @@
 d3.csv("data/table_data.csv", function (error, tableData) {
     if (error) throw error;
 
+    tableData.forEach(function (d) {
+        d.index = +d.index;
+
+    })
+
+
     var sortAscending = true;
 
     var table = d3.select('table#table');
@@ -54,7 +60,7 @@ d3.csv("data/table_data.csv", function (error, tableData) {
 
     table.selectAll("tbody tr")
         .sort(function (a, b) {
-            return d3.ascending(a.index, b.index)
+            return d3.descending(a.index, b.index)
 
         });
 });
