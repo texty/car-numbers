@@ -188,8 +188,8 @@ group.append('marker')
 
 var colourScale = d3.scaleLinear()
     .domain([0, 2000])
-    .range(['white','crimson']);
-// .range(['white', "#ec81e9"]);
+    // .range(['white','crimson']);
+    .range(['white', "#f582e9"]);
 
 var swoopy1 = d3.swoopyDrag()
         .x(d => x(d.y))
