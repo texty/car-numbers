@@ -3,7 +3,7 @@
  */
 
 var barChart = d3.select("svg#barChart"),
-    barChartmargin = { top: 20, right: 20, bottom: 30, left: 40 },
+    barChartmargin = { top: 20, right: 20, bottom: 60, left: 40 },
     barChartX = d3.scaleBand().padding(0.1),
     barChartY = d3.scaleLinear();
 
@@ -23,12 +23,14 @@ g.append("g")
 
 g.append("text")
 // .attr("transform", "rotate(-90)")
-    .attr("x", barChartWidth / 2 )
+    .attr("x", barChartWidth - barChartmargin.right )
     .attr("y", barChartHeight + 20)
-    .attr("dy", "0.71em")
+    .attr("dy", "2.2em")
     .attr("text-anchor", "end")
-    .text("Номери")
-    .style("font-size", "12px");
+    .text("номери")
+    .style("font-size", "12px")
+    .style("font-style", "italic")
+;
 
 
 
@@ -60,7 +62,13 @@ function draw(theData) {
 
     g.select(".axis--x")
         .attr("transform", "translate(0," + barChartHeight + ")")
-        .call(d3.axisBottom(barChartX));
+        .call(d3.axisBottom(barChartX))
+        .selectAll("text")
+        .attr("y", 0)
+        .attr("x", 9)
+        .attr("dy", ".35em")
+        .attr("transform", "rotate(90)")
+        .style("text-anchor", "start");
 
     g.select(".axis--y")
         .call(d3.axisLeft(barChartY).ticks(10));
@@ -71,11 +79,13 @@ function draw(theData) {
         .append("rect")
         .attr("class", "bar")
         .attr("x", function (d) { return barChartX(d.digits) + (barChartX.bandwidth()/2); })
+        // .attr("x", function (d) { return barChartX(d.digits) })
         .attr("y", function (d) { return barChartY(d.count) ; })
         .attr("width", 1)
         .attr("height", function (d) { return barChartHeight - barChartY(d.count); });
 
     barChart.selectAll("path.domain").remove();
+    barChart.selectAll("#barChart .axis--x .tick line").remove();
 
 
 

@@ -66,7 +66,7 @@ var annotations2 =
             "x": 30,
             "y": 50,
             "path": "M-32,57C-91,87,-136,78,-174,23",
-            "text": "пари на діагоналі, напр. 2525",
+            "text": "пари на діагоналі, напр. 2828",
             "textOffset": [
                 -132,
                 43
@@ -77,7 +77,7 @@ var annotations2 =
             "x": 55,
             "y": 55,
             "path": "M-242,54C-168,-22,-100,-14,-44,3",
-            "text": "трійки, напр. 4441, 4442, ...",
+            "text": "трійки, напр. 5550, 5551",
             "textOffset": [
                 -374,
                 72
@@ -311,8 +311,18 @@ function step_01(){
     retrieve_chart_data(function(myData){
         databind(myData);
 
+        setTimeout(function(){
+        $("span.car-number").each(function(d){
+            var thisId = $(this).text();
+            var bgcolor = $('rect#d' + thisId).css('fill');
+            $(this).css("background-color", bgcolor);
+        })
+
+        },1000);
+
     });
-    // d3.csv("./data/chart_data_1.csv", function(data) {
+
+        // d3.csv("./data/chart_data_1.csv", function(data) {
     //     databind(data);
     // })
 
@@ -360,13 +370,15 @@ function databind(data) {
 
     var exitSel = join.exit()
         .transition()
+        .duration(1000)
         //.attr('width', 0)
         //.attr('height', 0)
         .attr('fill', 'white')
         .remove();
 
     d3.selectAll(".plate_digits").each(function(d){
-        d3.select(this).attr("data-tippy-content", d.digits)
+       var k = "d" + d.digits;
+        d3.select(this).attr("data-tippy-content", d.digits).attr("id", k)
     });
 
 }
@@ -494,7 +506,7 @@ function init() {
         graphic: '.scroll__graphic',
         text: '.scroll__text',
         step: '.scroll__text .step',
-        offset: 0.7,
+        offset: 0.9,
         debug: false,
     })
         .onStepEnter(handleStepEnter)
@@ -507,8 +519,16 @@ function init() {
 init();
 
 
-// ^7[+\d]2[+\d]
+
+
 $('.number-input').on('input', function() {
+    var sanitized = $(this).val().replace(/[^0-9]/g, '');
+    $(this).val(sanitized);
+    var myLength = $(this).val().trim().length;
+    if(myLength == 1 ){
+        $(this).next('.number-input').focus();
+    }
+
     var n1 = $("#n-1").val();
     var n2 = $("#n-2").val();
     var n3 = $("#n-3").val();
@@ -531,13 +551,18 @@ $('.number-input').on('input', function() {
     n = n.replaceAll(",", "[0-9]");
     var regexp = new RegExp(n);
 
+//якщо немає жодної цифри
+    if(n === "^[0-9][0-9][0-9][0-9]"){
+        $("#inputResult").html("")
+    }
+
+//якщо є хоч щось
+    if(n != "^[0-9][0-9][0-9][0-9]"){
     retrieve_chart_data(function(allNumbers){
 
         var numbers = allNumbers.filter(function (n) {
                 return (n.digits.toString()).match(regexp);
         });
-
-        console.log(numbers);
 
         var sumArray = numbers.map(function (n){
             return parseInt(n.count)
@@ -547,20 +572,11 @@ $('.number-input').on('input', function() {
            return x + y
         });
 
-
-
-        $("#inputResult").html(sum)
+            $("#inputResult").html(sum)
     });
+}
+
 });
-
-
-
-
-
-
-
-
-
 
 
 
@@ -575,3 +591,7 @@ String.prototype.replaceAll = function(character,replaceChar){
 
 
 
+
+
+
+// $('[id="'+str+'"]')[0]

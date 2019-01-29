@@ -206,13 +206,22 @@ ul.links3 li a#orange {
 #next:hover {
   cursor: pointer; }
 
+@font-face {
+  font-family: Charter;
+  src: url(../fonts/Charter.ttf); }
+@font-face {
+  font-family: Charter Bold;
+  src: url(../fonts/charterblackc.otf); }
+@font-face {
+  font-family: Charter Italic;
+  src: url(../fonts/chartercbolditalic.otf); }
 body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
   width: 100%;
   height: 100%;
-  font-family: 'PT Serif', serif; }
+  font-family: 'Charter', serif; }
 
 #header {
   height: max-content; }
@@ -245,7 +254,7 @@ body {
         font-size: 20px; } }
     @media (min-width: 1800px) {
       .text-content h3 {
-        font-size: 35px; } }
+        font-size: 30px; } }
   .text-content h5 {
     font-size: 14px; }
     @media (max-width: 1024px) {
@@ -297,7 +306,7 @@ body {
         font-size: 20px !important; } }
     @media (min-width: 1800px) {
       .scroll__text h3 {
-        font-size: 35px; } }
+        font-size: 30px; } }
 
 .step {
   min-height: 100vh;
@@ -307,6 +316,15 @@ body {
 .step-text {
   height: auto !important; }
 
+#barChartContainer {
+  width: 60%;
+  height: 50%;
+  margin: auto; }
+  @media (max-width: 1024px) {
+    #barChartContainer {
+      width: 90%;
+      margin: auto; } }
+
 svg#mychart .tick text {
   font-size: 14px; }
 
@@ -314,13 +332,15 @@ svg#barChart .tick text {
   font-size: 11px; }
   @media (max-width: 1024px) {
     svg#barChart .tick text {
-      font-size: 6px; } }
+      font-size: 10px; } }
 
 table {
-  font-size: 12px;
+  border-spacing: 0;
+  border: 0.5px solid lightgrey;
+  font-size: 11px;
   width: 60%;
   margin: 30px auto; }
-  @media (max-width: 1024px) and (orientation: portrait) {
+  @media (max-width: 1024px) {
     table {
       font-size: 9px;
       width: 90%; } }
@@ -328,8 +348,10 @@ table {
     table {
       font-size: 18px; } }
   table td, table th {
-    text-align: center;
+    padding: 2px;
     border: 0.5px solid grey; }
+  table td {
+    text-align: right; }
   table td:nth-child(1), table th:nth-child(1) {
     text-align: left;
     padding-left: 3px; }
@@ -398,7 +420,6 @@ table {
   font-size: 30px; }
 
 span.car-number {
-  background-color: #f582e9;
   padding: 0 2px; }
 
 /*---------- button -------*/
