@@ -223,6 +223,10 @@ body {
   height: 100%;
   font-family: 'Charter', serif; }
 
+@media (max-height: 1024px) and (orientation: portrait) {
+  .desk {
+    display: none; } }
+
 #header {
   height: max-content; }
   #header h1 {
@@ -232,17 +236,26 @@ body {
 .text-content {
   width: 50%;
   margin: 50px auto; }
-  @media (max-width: 1024px) and (orientation: portrait) {
+  @media (max-width: 800px) and (orientation: portrait) {
     .text-content {
-      width: 90%; } }
-  @media (min-width: 1800px) {
+      width: 80%; } }
+  @media (min-width: 801px) and (max-width: 1024px) and (orientation: portrait) {
     .text-content {
       width: 50%; } }
+  @media (min-width: 1800px) and (max-width: 2199px) {
+    .text-content {
+      width: 50%; } }
+  @media (min-width: 2200px) {
+    .text-content {
+      width: 40%; } }
   .text-content p {
     font-size: 16px; }
-    @media (max-width: 1024px) {
+    @media (max-width: 800px) and (orientation: portrait) {
       .text-content p {
-        font-size: 13px; } }
+        font-size: 16px; } }
+    @media (min-width: 801px) and (max-width: 1024px) and (orientation: portrait) {
+      .text-content p {
+        font-size: 18px; } }
     @media (min-width: 1800px) {
       .text-content p {
         font-size: 25px; } }
@@ -267,62 +280,16 @@ body {
 .swoopy-1, .swoopy-2, .swoopy-3 {
   display: none; }
 
-#scroll {
-  width: 96%;
-  margin: 0 0 0 auto;
-  display: grid;
-  grid-template-columns: 50vw auto; }
-  @media (max-width: 1024px) and (orientation: portrait) {
-    #scroll {
-      display: block; } }
-
-.scroll__graphic {
-  grid-column: 1/2;
-  width: 100% !important; }
-
-.scroll__text {
-  grid-column: 2/3;
-  width: 100%;
-  margin: 0 auto; }
-  .scroll__text p {
-    font-size: 16px; }
-    @media (max-width: 1024px) {
-      .scroll__text p {
-        font-size: 14px; } }
-    @media (min-width: 1800px) {
-      .scroll__text p {
-        font-size: 25px; } }
-  .scroll__text p, .scroll__text h3, .scroll__text h2 {
-    width: 60%;
-    margin: 10px auto; }
-    @media (max-width: 1024px) {
-      .scroll__text p, .scroll__text h3, .scroll__text h2 {
-        width: 90%; } }
-  .scroll__text h3 {
-    margin: 50px auto 10px auto;
-    font-size: 20px; }
-    @media (max-width: 1024px) and (orientation: portrait) {
-      .scroll__text h3 {
-        font-size: 20px !important; } }
-    @media (min-width: 1800px) {
-      .scroll__text h3 {
-        font-size: 30px; } }
-
-.step {
-  min-height: 100vh;
-  height: auto;
-  margin: 50vh 0 !important; }
-
 .step-text {
   height: auto !important; }
 
 #barChartContainer {
   width: 60%;
-  height: 50%;
+  height: 60%;
   margin: auto; }
-  @media (max-width: 1024px) {
+  @media (max-width: 1024px) and (orientation: portrait) {
     #barChartContainer {
-      width: 90%;
+      width: 80%;
       margin: auto; } }
 
 svg#mychart .tick text {
@@ -342,10 +309,10 @@ table {
   @media (min-width: 1800px) {
     table {
       font-size: 20px; } }
-  @media (max-width: 1024px) {
+  @media (max-width: 1024px) and (orientation: portrait) {
     table {
       font-size: 12px;
-      width: 90%; } }
+      width: 80%; } }
   table td, table th {
     padding: 1px;
     border: 0.1mm solid rgba(0, 0, 0, 0.25); }
@@ -357,9 +324,23 @@ table {
 
 /* Scrollama */
 #scroll {
-  position: relative; }
+  position: relative;
+  width: 100%;
+  margin: 0 0 0 auto;
+  display: grid;
+  grid-template-columns: 50vw auto; }
+  @media (max-width: 1024px) and (orientation: portrait) {
+    #scroll {
+      display: block; } }
+  @media (min-width: 2200px) {
+    #scroll {
+      width: 70%;
+      grid-template-columns: 50% 50%;
+      margin: 0 auto; } }
 
 .scroll__graphic {
+  grid-column: 1/2;
+  width: 100% !important;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -367,9 +348,11 @@ table {
   z-index: 1000; }
   @media (max-width: 1024px) and (orientation: portrait) {
     .scroll__graphic {
-      top: 5px; } }
+      top: 0;
+      pointer-events: none; } }
 
 .chart {
+  background-color: white;
   z-index: 1000;
   width: 100% !important;
   height: 100% !important;
@@ -381,17 +364,54 @@ table {
       height: 50% !important; } }
   .chart svg {
     z-index: 100;
-    background-color: white;
-    margin: auto; }
+    margin: auto auto auto 3%; }
     @media (max-width: 1024px) and (orientation: portrait) {
       .chart svg {
-        margin: 0 auto; } }
+        margin: 10px auto 0 3%; } }
 
 .scroll__text {
-  position: relative; }
+  position: relative;
+  grid-column: 2/3;
+  width: 100%;
+  margin: 0 auto; }
+  .scroll__text p {
+    font-size: 16px; }
+    @media (max-width: 800px) and (orientation: portrait) {
+      .scroll__text p {
+        font-size: 16px; } }
+    @media (min-width: 801px) and (max-width: 1024px) and (orientation: portrait) {
+      .scroll__text p {
+        font-size: 18px; } }
+    @media (min-width: 1800px) {
+      .scroll__text p {
+        font-size: 25px; } }
+  .scroll__text p, .scroll__text h3, .scroll__text h2 {
+    width: 60%;
+    margin: 10px auto; }
+    @media (max-width: 800px) and (orientation: portrait) {
+      .scroll__text p, .scroll__text h3, .scroll__text h2 {
+        width: 80%; } }
+    @media (min-width: 801px) and (max-width: 1024px) and (orientation: portrait) {
+      .scroll__text p, .scroll__text h3, .scroll__text h2 {
+        width: 50%; } }
+  .scroll__text h3 {
+    margin: 50px auto 10px auto;
+    font-size: 20px; }
+    @media (max-width: 1024px) and (orientation: portrait) {
+      .scroll__text h3 {
+        font-size: 20px !important; } }
+    @media (min-width: 1800px) {
+      .scroll__text h3 {
+        font-size: 30px; } }
 
 .step {
-  margin: 2rem auto; }
+  min-height: max-content !important;
+  -moz-min-height: max-content !important;
+  -weblit-min-height: max-content !important;
+  margin: 50vh 0; }
+  @media (max-width: 1024px) and (orientation: portrait) {
+    .step {
+      margin: 2rem auto; } }
 
 .step.is-active {
   background-color: lightgoldenrodyellow; }
@@ -402,10 +422,16 @@ table {
 #letPlay {
   width: 60%;
   margin: auto; }
-  @media (max-width: 1024px) {
+  @media (max-width: 800px) and (orientation: portrait) {
     #letPlay {
-      width: 90%; } }
+      width: 80%; } }
+  @media (min-width: 801px) and (max-width: 1024px) and (orientation: portrait) {
+    #letPlay {
+      width: 50%; } }
   #letPlay input {
+    font-size: 30px;
+    background-color: #f582e9;
+    border: none;
     width: 40px;
     height: 40px;
     margin-right: 5px; }
@@ -415,6 +441,12 @@ table {
   margin: auto;
   text-align: left;
   font-size: 30px; }
+  @media (max-width: 800px) and (orientation: portrait) {
+    #inputResult {
+      width: 80%; } }
+  @media (min-width: 801px) and (max-width: 1024px) and (orientation: portrait) {
+    #inputResult {
+      width: 50%; } }
 
 span.car-number {
   padding: 0 2px; }

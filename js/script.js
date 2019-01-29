@@ -2,6 +2,11 @@
  * Created by yevheniia on 24.01.19.
  */
 
+const stepHeight = window.innerHeight / 2;
+d3.selectAll('.step')
+    .style('height', `${stepHeight}px`);
+
+
 var chart_data;
 function retrieve_chart_data(cb) {
     if (chart_data) return cb(chart_data);
@@ -126,10 +131,10 @@ var collection;
 var margin = {top: 30, right: 30, bottom: 30, left: 30};
 
 var viewBox = $("#mychart")[0].getAttribute("viewBox").split(" "),
-    size = viewBox.slice(2),
-    width = size[0],
-    height = size[1],
-    aspect = width / height;
+    size = viewBox.slice(2);
+    var width = size[0];
+    var height = size[1];    
+
 
 // append the svg object to the body of the page
 
@@ -405,7 +410,7 @@ var scroller = scrollama();
 // generic window resize listener event
 function handleResize() {
     // 1. update height of step elements
-    var stepHeight = Math.floor(window.innerHeight * 0.75);
+    var stepHeight = Math.floor(window.innerHeight * 0.5);
     step.style('height', stepHeight + 'px');
 
     // 2. update width/height of graphic element
