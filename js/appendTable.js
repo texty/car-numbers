@@ -20,7 +20,7 @@ d3.csv("data/table_data.csv", function (error, tableData) {
 
 // Add the table header content.
     tableHead.append('tr').selectAll('th')
-        .data(["марка", "Зростання, рази", "На звичайних номерах", "На «модних» номерах"]).enter()
+        .data(["Марка", "Зростання, рази", "На звичайних номерах", "На «модних» номерах"]).enter()
         .append('th')
         .text(function (d) {
             return d;

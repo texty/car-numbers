@@ -208,7 +208,7 @@ ul.links3 li a#orange {
 
 @font-face {
   font-family: Charter;
-  src: url(../fonts/Charter.ttf); }
+  src: url(../fonts/charteritc.otf); }
 @font-face {
   font-family: Charter Bold;
   src: url(../fonts/charterblackc.otf); }
@@ -230,7 +230,7 @@ body {
     margin: auto; }
 
 .text-content {
-  width: 60%;
+  width: 50%;
   margin: 50px auto; }
   @media (max-width: 1024px) and (orientation: portrait) {
     .text-content {
@@ -336,20 +336,19 @@ svg#barChart .tick text {
 
 table {
   border-spacing: 0;
-  border: 0.5px solid lightgrey;
-  font-size: 11px;
   width: 60%;
-  margin: 30px auto; }
-  @media (max-width: 1024px) {
-    table {
-      font-size: 9px;
-      width: 90%; } }
+  margin: 30px auto;
+  font-size: 14px; }
   @media (min-width: 1800px) {
     table {
-      font-size: 18px; } }
+      font-size: 20px; } }
+  @media (max-width: 1024px) {
+    table {
+      font-size: 12px;
+      width: 90%; } }
   table td, table th {
-    padding: 2px;
-    border: 0.5px solid grey; }
+    padding: 1px;
+    border: 0.1mm solid rgba(0, 0, 0, 0.25); }
   table td {
     text-align: right; }
   table td:nth-child(1), table th:nth-child(1) {
@@ -407,8 +406,6 @@ table {
     #letPlay {
       width: 90%; } }
   #letPlay input {
-    background-color: #f582e9;
-    border: none;
     width: 40px;
     height: 40px;
     margin-right: 5px; }
@@ -458,5 +455,12 @@ span.car-number {
   @media (min-width: 1800px) {
     #support-us {
       font-size: 30px; } }
+
+.dashed-link {
+  color: black !important;
+  padding-bottom: 2px;
+  font-style: italic;
+  border-bottom: 1px dashed #f582e9;
+  text-decoration: none; }
 
 /*# sourceMappingURL=styles.css.map */
