@@ -3,7 +3,7 @@
  */
 
 var barChart = d3.select("svg#barChart"),
-    barChartmargin = { top: 20, right: 20, bottom: 60, left: 40 },
+    barChartmargin = { top: 30, right: 20, bottom: 60, left: 40 },
     barChartX = d3.scaleBand().padding(0.1),
     barChartY = d3.scaleLinear();
 
@@ -21,19 +21,14 @@ g.append("g")
     .attr("class", "axis axis--y");
 
 
-g.append("text")
-// .attr("transform", "rotate(-90)")
-    .attr("x", barChartWidth - barChartmargin.right )
-    .attr("y", barChartHeight + 20)
-    .attr("dy", "2.2em")
-    .attr("text-anchor", "end")
-    .text("номери")
-    .style("font-size", "12px")
-    .style("font-style", "italic")
-;
-
-
-
+// var xAxisLabel = g.append("text");
+// // .attr("transform", "rotate(-90)")
+//
+// ;
+//
+//
+//
+// var yAxisLabel = g.append("text");
 
 d3.csv("./data/chart_data_1.csv", function(barChartData) {
 
@@ -88,6 +83,69 @@ function draw(theData) {
     barChart.selectAll("#barChart .axis--x .tick line").remove();
 
 
+    g.append("rect")
+        .attr("id", "x-axis-label-bg")
+        .attr("fill", "rgb(253, 225, 250)");
+
+
+    g.append("rect")
+        .attr("id", "y-axis-label-bg")
+        .attr("fill", "rgb(253, 225, 250)");
+
+
+    g.append("text")
+        .attr("x", -5)
+        .attr("y", 0 - 40)
+        .attr("dy", "2.2em")
+        .attr("text-anchor", "end")
+        .text("штук")
+        .style("font-size", "12px")
+        .style("font-style", "italic")
+    ;
+
+
+    g.append("text")
+        .attr("x", barChartWidth - barChartmargin.right )
+        .attr("y", barChartY(500))
+        .attr("id", "x-axis-label")
+        .attr("dy", "2.2em")
+        .attr("text-anchor", "end")
+        .text("номери")
+        .style("font-size", "12px")
+        .style("font-style", "italic")
+    ;
+
+
+    // .attr("transform", "rotate(-90)")
+
+
+
+    var paddingLeftRight = 3; // adjust the padding values depending on font and font size
+    var paddingTopBottom = 1;
+
+    var bb;
+
+    barChart.selectAll("#x-axis-label").each(function(d){
+    bb = this.getBBox();
+    console.log(bb);
+});
+
+
+    barChart.selectAll("rect#x-axis-label-bg")
+        .attr("x", barChartWidth - (barChartmargin.right + bb.width))
+        .attr("y", barChartY(500) + bb.height)
+        .attr("width", function(d) { return bb.width + paddingLeftRight; })
+        .attr("height", function(d) { return bb.height + paddingTopBottom; })
+        .style("z-index", 10000)
+    ;
+
+    barChart.selectAll("rect#y-axis-label-bg")
+        .attr("x", -3 - bb.width)
+        .attr("y", 0 - 25)
+        .attr("width", function(d) { return bb.width + paddingLeftRight; })
+        .attr("height", function(d) { return bb.height + paddingTopBottom; })
+        .style("z-index", 10000)
+    ;
 
     // // UPDATE
     // bars.attr("x", function (d) { return barChartX(d.digits); })

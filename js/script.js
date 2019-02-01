@@ -225,6 +225,8 @@ var swoopy3 = d3.swoopyDrag()
 // .draggable(true)
 //     .annotations(annotations3);
 
+
+
 step_00();
 
 
@@ -267,6 +269,7 @@ ticks.attr("class", function(d,i){
 
 
 function step_00(){
+    sessionStorage.loaded = true;
     databind(generate_random());
 
 }
@@ -347,6 +350,7 @@ function databind(data) {
      .domain(d3.extent(data, function(d) { return d.alpha; }))
      .range(['white','crimson'])
      */
+    // data = data.filter(d => +d.x < 30 && +d.y < 30);
     var join = group.selectAll('rect.plate_digits')
             .data(data, (d) => {return d.x+"|"+d.y} );
 
@@ -492,6 +496,12 @@ function handleStepEnter(r) {
     if(r.index === 4 && r.direction === "down"){
         $(".swoopy-3").css("display", "block")
     }
+
+    $(document).ready(function() {
+        if (sessionStorage.loaded === true && r.index != 1) {
+            step_01();
+        }
+    });
 
 }
 
