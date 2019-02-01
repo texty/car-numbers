@@ -371,10 +371,10 @@
     <p>Введіть одну чи більше <b>цифр</b> з номерного знака – і подивіться, скільки людей мають такі цифри у номері. Форма ігнорує будь-які символи, окрім цифр.</p>
 
     <div id="letPlay">
-        <input type="number" min="0" max="9" maxlength="1" id="n-1" class="number-input" data-disable-touch-keyboard>
-        <input type="number" min="0" max="9" maxlength="1" id="n-2" class="number-input" data-disable-touch-keyboard>
-        <input type="number" min="0" max="9" maxlength="1" id="n-3" class="number-input" data-disable-touch-keyboard>
-        <input type="number" min="0" max="9" maxlength="1" id="n-4" class="number-input" data-disable-touch-keyboard>
+        <input type="number" min="0" max="9" maxlength="1" id="n-1" class="number-input" >
+        <input type="number" min="0" max="9" maxlength="1" id="n-2" class="number-input" >
+        <input type="number" min="0" max="9" maxlength="1" id="n-3" class="number-input" >
+        <input type="number" min="0" max="9" maxlength="1" id="n-4" class="number-input" >
     </div>
 
     <div id="inputResult" style=""></div>
@@ -486,7 +486,7 @@
 </div>
 
 <script>
-    $('[data-disable-touch-keyboard]').attr('readonly', 'readonly');
+//    $('[data-disable-touch-keyboard]').attr('readonly', 'readonly');
 </script>
 
 <script type="text/javascript">
