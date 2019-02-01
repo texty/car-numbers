@@ -367,7 +367,8 @@ table {
   top: 0; }
   @media (max-width: 1024px) and (orientation: portrait) {
     .chart {
-      height: 50% !important; } }
+      height: 90vw !important;
+      margin: auto; } }
   .chart svg {
     z-index: 100;
     margin: auto auto auto 3%; }

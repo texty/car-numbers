@@ -169,7 +169,7 @@ var x = d3.scaleBand()
 
 group.append("g")
     .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(x))
+    .call(d3.axisBottom(x));
 
 // Build X scales and axis:
 var y = d3.scaleBand()
