@@ -127,7 +127,6 @@ function draw(theData) {
 
     barChart.selectAll("#x-axis-label").each(function(d){
     bb = this.getBBox();
-    console.log(bb);
 });
 
 

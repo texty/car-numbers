@@ -215,6 +215,26 @@ ul.links3 li a#orange {
 @font-face {
   font-family: Charter Italic;
   src: url(../fonts/chartercbolditalic.otf); }
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000; }
+  to {
+    stroke-dashoffset: 0; } }
+@keyframes dashoff {
+  from {
+    stroke-dashoffset: 0; }
+  to {
+    stroke-dashoffset: 100; } }
+.pathAnimateTo {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  animation: dash 3s linear 1; }
+
+.pathAnimateFrom {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dashoff 5s linear 1; }
+
 body {
   margin: 0;
   padding: 0;
@@ -324,9 +344,11 @@ table {
       font-size: 12px;
       width: 60%; } }
   table td, table th {
+    vertical-align: text-top;
     padding: 1px;
     border: 0.1mm solid rgba(0, 0, 0, 0.25); }
   table td {
+    white-space: nowrap;
     text-align: right;
     padding-right: 3px;
     font-family: "Ubuntu Mono", serif; }
@@ -383,6 +405,7 @@ table {
         margin: 10px auto 0 3%; } }
 
 .scroll__text {
+  font-family: 'PT Sans', sans-serif;
   position: relative;
   grid-column: 2/3;
   width: 100%;
@@ -462,6 +485,7 @@ table {
       width: 50%; } }
 
 span.car-number {
+  font-family: 'PT Sans', sans-serif;
   padding: 0 2px; }
 
 /*---------- button -------*/

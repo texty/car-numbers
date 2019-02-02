@@ -122,21 +122,12 @@ var annotations3 =
 
 var collection;
 
-
-
-// d3.select('.on_click')
-//     .on('click', function(){ step_01(); })
-
-
 var margin = {top: 30, right: 30, bottom: 30, left: 30};
 
 var viewBox = $("#mychart")[0].getAttribute("viewBox").split(" "),
     size = viewBox.slice(2);
     var width = size[0];
     var height = size[1];    
-
-
-// append the svg object to the body of the page
 
 var svg = d3.select("svg#mychart");
 
@@ -152,10 +143,6 @@ height = 1 * height - margin.top - margin.bottom;
 //     .attr("preserveAspectRatio", "xMinYMin meet")
 //     // .attr("width", width + margin.left + margin.right)
 //     // .attr("height", height + margin.top + margin.bottom)
-
-// group.append("g")
-//     .attr("transform",
-//         "translate(" +0 + "," + 0 + ")");
 
 // Labels of row and columns
 var myGroups = [...Array(100).keys()].map((e) => {e = '' + e; return e.length == 1 ? '0' + e : e;} )
@@ -215,55 +202,32 @@ var swoopy3 = d3.swoopyDrag()
 .draggable(false)
     .annotations(annotations3);
 
-
-
-
-
-// var swoopy2 = d3.swoopyDrag()
-//         .x(d => x(d.y))
-// .y(d => y(d.x))
-// .draggable(true)
-//     .annotations(annotations3);
-
-
-
 step_00();
 
 
 var swoopySel1 = group.append('g')
     .attr("class", "swoopy-1")
     .call(swoopy1);
-swoopySel1.selectAll('path').attr('marker-end', 'url(#arrow)');
+// swoopySel1.selectAll('path').attr('marker-end', 'url(#arrow)');
 
 
 var swoopySel2 = group.append('g')
     .attr("class", "swoopy-2")
     .call(swoopy2);
 
-swoopySel2.selectAll('path').attr('marker-end', 'url(#arrow)')
+// swoopySel2.selectAll('path').attr('marker-end', 'url(#arrow)')
 
 var swoopySel3 = group.append('g')
     .attr("class", "swoopy-3")
     .call(swoopy3);
 
-swoopySel3.selectAll('path').attr('marker-end', 'url(#arrow)')
+// swoopySel3.selectAll('path').attr('marker-end', 'url(#arrow)')
 
 
 var ticks = d3.selectAll(".tick text");
 ticks.attr("class", function(d,i){
     if(i%10 != 0) d3.select(this).remove();
 });
-
-
-
-
-
-
-// $(".tippy-popper").attr("opacity", 0);
-
-// setTimeout(step_01, 2000);
-//
-// setTimeout(step_00, 7000);
 
 
 
@@ -312,6 +276,24 @@ function step_01(){
         }
     });
 
+
+    tippy('.car-number', {
+        hideOnClick: true,
+        theme: 'tomato',
+        delay: 0,
+        animateFill: true,
+        // arrow: true,
+        // inertia: false,
+        size: 'small',
+        duration: 0,
+        allowHTML: true,
+        trigger: "mouseenter",
+        interactive: false,
+        onShow(tip) {
+            tip.setContent(tip.reference.getAttribute('data-tippy-content'))
+        }
+    });
+
     //
 
 
@@ -323,19 +305,14 @@ function step_01(){
         $("span.car-number").each(function(d){
             var thisId = $(this).text();
             var bgcolor = $('rect#d' + thisId).css('fill');
+            var tooltip = $('rect#d' + thisId).attr("value");
             $(this).css("background-color", bgcolor);
+            $(this).attr("data-tippy-content", tooltip);
         })
 
         },1000);
 
     });
-
-        // d3.csv("./data/chart_data_1.csv", function(data) {
-    //     databind(data);
-    // })
-
-
-
 
 
 }
@@ -387,7 +364,7 @@ function databind(data) {
 
     d3.selectAll(".plate_digits").each(function(d){
        var k = "d" + d.digits;
-        d3.select(this).attr("data-tippy-content", d.digits).attr("id", k)
+        d3.select(this).attr("data-tippy-content", d.digits).attr("id", k).attr("value", d.count)
     });
 
 }
@@ -462,6 +439,10 @@ function handleStepEnter(r) {
     }
 
     if(r.index === 1 && r.direction === "up"){
+        $(".swoopy-1").find("path").each(function(d){
+            $(this).attr("class", "");
+        });
+        swoopySel1.selectAll('path').attr('marker-end', '');
         $(".swoopy-1").css("display", "none");
         $(".swoopy-2").css("display", "none");
         $(".swoopy-3").css("display", "none");
@@ -469,11 +450,21 @@ function handleStepEnter(r) {
 
 
     if(r.index === 2 && r.direction === "down"){
+        $(".swoopy-1").find("path").each(function(d){
+            $(this).attr("class", "pathAnimateTo")
+        });
+        setTimeout(function(){
+            swoopySel1.selectAll('path').attr('marker-end', 'url(#arrow)');
+        }, 500);
         $(".swoopy-1").css("display", "block")
     }
 
     if(r.index === 2 && r.direction === "up"){
         $(".swoopy-1").css("display", "block");
+        $(".swoopy-2").find("path").each(function(d){
+            $(this).attr("class", "");
+        });
+        swoopySel2.selectAll('path').attr('marker-end', '');
         $(".swoopy-2").css("display", "none");
         $(".swoopy-3").css("display", "none");
     }
@@ -481,6 +472,13 @@ function handleStepEnter(r) {
 
 
     if(r.index === 3 && r.direction === "down"){
+        $(".swoopy-2").find("path").each(function(d){
+            $(this).attr("class", "pathAnimateTo")
+        });
+        setTimeout(function(){
+            swoopySel2.selectAll('path').attr('marker-end', 'url(#arrow)');
+        }, 500);
+
         $(".swoopy-2").css("display", "block")
     }
 
@@ -488,12 +486,23 @@ function handleStepEnter(r) {
     if(r.index === 3 && r.direction === "up"){
         $(".swoopy-2").css("display", "block");
         $(".swoopy-1").css("display", "block");
+        $(".swoopy-3").find("path").each(function(d){
+            $(this).attr("class", "");
+        });
+        swoopySel3.selectAll('path').attr('marker-end', '');
         $(".swoopy-3").css("display", "none");
 
     }
 
 
     if(r.index === 4 && r.direction === "down"){
+        $(".swoopy-3").find("path").each(function(d){
+            $(this).attr("class", "pathAnimateTo")
+        });
+        setTimeout(function(){
+            swoopySel3.selectAll('path').attr('marker-end', 'url(#arrow)');
+        }, 1500);
+
         $(".swoopy-3").css("display", "block")
     }
 
