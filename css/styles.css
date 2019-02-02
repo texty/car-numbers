@@ -432,16 +432,16 @@ table {
 .step p {
   z-index: -1; }
 
-#letPlay {
+#letPlay, #letPlay-m {
   width: 60%;
   margin: auto; }
   @media (max-width: 800px) and (orientation: portrait) {
-    #letPlay {
+    #letPlay, #letPlay-m {
       width: 80%; } }
   @media (min-width: 801px) and (max-width: 1024px) and (orientation: portrait) {
-    #letPlay {
+    #letPlay, #letPlay-m {
       width: 50%; } }
-  #letPlay input {
+  #letPlay input, #letPlay-m input {
     font-size: 30px;
     background-color: #f582e9;
     border: none;
@@ -449,16 +449,16 @@ table {
     height: 40px;
     margin-right: 5px; }
 
-#inputResult {
+#inputResult, #inputResult-m {
   width: 60%;
   margin: auto;
   text-align: left;
   font-size: 30px; }
   @media (max-width: 800px) and (orientation: portrait) {
-    #inputResult {
+    #inputResult, #inputResult-m {
       width: 80%; } }
   @media (min-width: 801px) and (max-width: 1024px) and (orientation: portrait) {
-    #inputResult {
+    #inputResult, #inputResult-m {
       width: 50%; } }
 
 span.car-number {
