@@ -41,19 +41,19 @@
 <!-- Links -->
 <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
-<!--<link rel="stylesheet" href="lib/TangleKit/TangleKit.css"/>-->
+<link rel="stylesheet" href="lib/TangleKit/TangleKit.css"/>
 <link rel="stylesheet" href="css/styles.css"/>
 
 <!-- Scripts -->
 <script src="lib/jquery-2.1.4.min.js"></script>
 <script src="lib/d3.v4.js"></script>
 <script src='lib/intersection-observer.js'></script>
-<!--<script src="lib/Tangle.js"></script>-->
+<script src="lib/Tangle.js"></script>
 
-<!--<script src="lib/TangleKit/mootools.js"></script>-->
-<!--<script src="lib/TangleKit/sprintf.js"></script>-->
-<!--<script src="lib/TangleKit/BVTouchable.js"></script>-->
-<!--<script src="lib/TangleKit/TangleKit.js"></script>-->
+<script src="lib/TangleKit/mootools.js"></script>
+<script src="lib/TangleKit/sprintf.js"></script>
+<script src="lib/TangleKit/BVTouchable.js"></script>
+<script src="lib/TangleKit/TangleKit.js"></script>
 
 
 <script src='lib/scrollama.min.js'></script>
@@ -209,10 +209,16 @@
         <p>Введіть одну чи більше <b>цифр</b> з номерного знака – і подивіться, скільки людей мають такі цифри у номері. Форма ігнорує будь-які символи, окрім цифр.</p>
 
         <div id="letPlay-m" class="mob">
-            <input type="number" maxlength="1" id="m-1" class="number-input-m"/>
-            <input type="number" maxlength="1" id="m-2" class="number-input-m"/>
-            <input type="number" maxlength="1" id="m-3" class="number-input-m"/>
-            <input type="number" maxlength="1" id="m-4" class="number-input-m"/>
+            <h1 id="calculator">
+               <span id="n1" data-var="n1" class="TKAdjustableNumber" data-min="-1" data-max="9"></span>
+               <span id="n2" data-var="n2" class="TKAdjustableNumber" data-min="-1" data-max="9"></span>
+               <span id="n3" data-var="n3" class="TKAdjustableNumber" data-min="-1" data-max="9"></span>
+               <span id="n4" data-var="n4" class="TKAdjustableNumber" data-min="-1" data-max="9"></span>
+            </h1>
+            <!--<input type="number" maxlength="1" id="m-1" class="number-input-m"/>-->
+            <!--<input type="number" maxlength="1" id="m-2" class="number-input-m"/>-->
+            <!--<input type="number" maxlength="1" id="m-3" class="number-input-m"/>-->
+            <!--<input type="number" maxlength="1" id="m-4" class="number-input-m"/>-->
         </div>
 
         <div class="mob" id="inputResult-m" style=""></div>

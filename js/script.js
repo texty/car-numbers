@@ -604,62 +604,64 @@ $('.number-input').on('input', function() {
 
 //mobile form
 
-$('.number-input-m').on('input', function() {
-    var sanitized = $(this).val().replace(/[^0-9]/g, '');
-    $(this).val(sanitized);
-    var myLength = $(this).val().trim().length;
-    if(myLength == 1 ){
-        $(this).next('.number-input-m').focus();
-    }
+// $('#m1').on('drag', function() {
+    // var sanitized = $(this).html().replace(/[^0-9]/g, '');
+    // $(this).val(sanitized);
+    // var myLength = $(this).val().trim().length;
+    // if(myLength == 1 ){
+    //     $(this).next('.number-input-m').focus();
+    // }
 
-    var m1 = $("#m-1").val();
-    var m2 = $("#m-2").val();
-    var m3 = $("#m-3").val();
-    var m4 = $("#m-4").val();
 
-    if (m1 === "" || isNaN(m1)) {
-        m1 = ","
-    }
-    if (m2 === ""  || isNaN(m2)) {
-        m2 = ","
-    }
-    if (m3 === "" || isNaN(m3)) {
-        m3 = ","
-    }
-    if (m4 === ""  || isNaN(m4)) {
-        m4 = ","
-    }
+//     var m1 = $("#m-1").innerHTML;
+//     alert(m1);
+//     // var m2 = $("#m-2").val();
+//     // var m3 = $("#m-3").val();
+//     // var m4 = $("#m-4").val();
+//
+//     if (m1 === "" || isNaN(m1)) {
+//         m1 = ","
+//     }
+//     if (m2 === ""  || isNaN(m2)) {
+//         m2 = ","
+//     }
+//     if (m3 === "" || isNaN(m3)) {
+//         m3 = ","
+//     }
+//     if (m4 === ""  || isNaN(m4)) {
+//         m4 = ","
+//     }
+//
+//     var n = "^" + m1 + m2 + m3 + m4;
+//     n = n.replaceAll(",", "[0-9]");
+//     var regexp = new RegExp(n);
+//
+// //якщо немає жодної цифри
+//     if(n === "^[0-9][0-9][0-9][0-9]"){
+//         $("#inputResult-m").html("")
+//     }
+//
+// //якщо є хоч щось
+//     if(n != "^[0-9][0-9][0-9][0-9]"){
+//         retrieve_chart_data(function(allNumbers){
+//
+//             var numbers = allNumbers.filter(function (n) {
+//                 return (n.digits.toString()).match(regexp);
+//             });
+//
+//             var sumArray = numbers.map(function (n){
+//                 return parseInt(n.count)
+//             });
+//
+//             var sum = sumArray.reduce(function(x, y) {
+//                 return x + y
+//             });
+//
+//             $("#inputResult-m").html(sum)
+//         });
+//     }
 
-    var n = "^" + m1 + m2 + m3 + m4;
-    n = n.replaceAll(",", "[0-9]");
-    var regexp = new RegExp(n);
-
-//якщо немає жодної цифри
-    if(n === "^[0-9][0-9][0-9][0-9]"){
-        $("#inputResult-m").html("")
-    }
-
-//якщо є хоч щось
-    if(n != "^[0-9][0-9][0-9][0-9]"){
-        retrieve_chart_data(function(allNumbers){
-
-            var numbers = allNumbers.filter(function (n) {
-                return (n.digits.toString()).match(regexp);
-            });
-
-            var sumArray = numbers.map(function (n){
-                return parseInt(n.count)
-            });
-
-            var sum = sumArray.reduce(function(x, y) {
-                return x + y
-            });
-
-            $("#inputResult-m").html(sum)
-        });
-    }
-
-});
+// });
 
 
 
@@ -676,11 +678,32 @@ String.prototype.replaceAll = function(character,replaceChar){
 
 
 
-// var tangle = new Tangle (document.getElementById("calculator"), {
-//     initialize: function () {
-//         this.n1 = 0; this.n2 = 0; this.n3 = 0; this.n4 = 0;
-//     }, update: function () { }
-// });
+var tangle = new Tangle (document.getElementById("calculator"), {
+    initialize: function () {
+        this.n1 = 0; this.n2 = 0; this.n3 = 0; this.n4 = 0;
+    }, update: function () {
+
+    }
+});
+
+$("#n1").on("touchmove", function(d){
+    alert("hi")
+});
+
+Tangle.classes.ClickableNumber = {
+    initialize: function (element, options, tangle, variable) {
+        element.onclick = function () {
+            var m1 = tangle.getValue("n1");
+            alert(m1)
+
+        };
+    }
+};
+
+
+
+
+
 
 
 
