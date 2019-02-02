@@ -608,5 +608,11 @@ String.prototype.replaceAll = function(character,replaceChar){
 
 
 
+// var tangle = new Tangle (document.getElementById("calculator"), {
+//     initialize: function () {
+//         this.n1 = 0; this.n2 = 0; this.n3 = 0; this.n4 = 0;
+//     }, update: function () { }
+// });
 
-// $('[id="'+str+'"]')[0]
+
+

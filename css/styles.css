@@ -223,6 +223,12 @@ body {
   height: 100%;
   font-family: 'Charter', serif; }
 
+.mob {
+  display: none; }
+  @media (max-height: 1024px) and (orientation: portrait) {
+    .mob {
+      display: block; } }
+
 @media (max-height: 1024px) and (orientation: portrait) {
   .desk {
     display: none; } }
