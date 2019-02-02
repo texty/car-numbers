@@ -317,6 +317,10 @@ body {
     #barChartContainer {
       width: 80%;
       margin: auto; } }
+  @media (max-width: 825px) and (orientation: landscape) {
+    #barChartContainer {
+      width: 90%;
+      margin: auto; } }
 
 svg#mychart .tick text {
   font-size: 14px; }
@@ -339,6 +343,9 @@ table {
     table {
       font-size: 12px;
       width: 80%; } }
+  @media (max-width: 825px) and (orientation: landscape) {
+    table {
+      width: 90%; } }
   @media (min-width: 801px) and (max-width: 1024px) and (orientation: portrait) {
     table {
       font-size: 12px;
@@ -424,9 +431,12 @@ table {
   .scroll__text p, .scroll__text h3, .scroll__text h2 {
     width: 60%;
     margin: 10px auto; }
-    @media (max-width: 800px) and (orientation: portrait) {
+    @media (max-width: 825px) and (orientation: portrait) {
       .scroll__text p, .scroll__text h3, .scroll__text h2 {
         width: 80%; } }
+    @media (max-width: 825px) and (orientation: landscape) {
+      .scroll__text p, .scroll__text h3, .scroll__text h2 {
+        width: 90%; } }
     @media (min-width: 801px) and (max-width: 1024px) and (orientation: portrait) {
       .scroll__text p, .scroll__text h3, .scroll__text h2 {
         width: 50%; } }
@@ -461,6 +471,10 @@ table {
   @media (max-width: 800px) and (orientation: portrait) {
     #letPlay, #letPlay-m {
       width: 80%; } }
+  @media (max-width: 825px) and (orientation: landscape) {
+    #letPlay, #letPlay-m {
+      width: 90%;
+      margin: auto; } }
   @media (min-width: 801px) and (max-width: 1024px) and (orientation: portrait) {
     #letPlay, #letPlay-m {
       width: 50%; } }
