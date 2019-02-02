@@ -532,4 +532,11 @@ span.car-number {
   border-bottom: 1px dashed #f582e9;
   text-decoration: none; }
 
+.TKAdjustableNumber {
+  color: #f582e9;
+  border-bottom: 1px dashed #f582e9; }
+
+.mob.TKAdjustableNumber {
+  border-bottom: 0; }
+
 /*# sourceMappingURL=styles.css.map */

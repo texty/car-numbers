@@ -605,12 +605,6 @@ $('.number-input').on('input', function() {
 //mobile form
 
 // $('#m1').on('drag', function() {
-    // var sanitized = $(this).html().replace(/[^0-9]/g, '');
-    // $(this).val(sanitized);
-    // var myLength = $(this).val().trim().length;
-    // if(myLength == 1 ){
-    //     $(this).next('.number-input-m').focus();
-    // }
 
 
 //     var m1 = $("#m-1").innerHTML;
@@ -683,12 +677,66 @@ var tangle = new Tangle (document.getElementById("calculator"), {
         this.n1 = 0; this.n2 = 0; this.n3 = 0; this.n4 = 0;
     }, update: function () {
 
+
+        var m1 = this.n1,
+            m2 = this.n2,
+            m3 = this.n3,
+            m4 = this.n4;
+
+    if (this.n1 === -1) {
+        m1 = ","
+    }
+    if (this.n2 === -1) {
+        m2 = ","
+    }
+    if (this.n3 === -1) {
+        m3 = ","
+    }
+    if (this.n4 === -1) {
+        m4 = ","
+    }
+
+    var n = "^" + m1 + m2 + m3 + m4;
+    n = n.replaceAll(",", "[0-9]");
+    var regexp = new RegExp(n);
+
+//якщо немає жодної цифри
+    if(n === "^[0-9][0-9][0-9][0-9]"){
+        this.result = "оберіть від 0 до 9"
+    }
+
+
+        var sum;
+        if(n != "^[0-9][0-9][0-9][0-9]"){
+
+        retrieve_chart_data(function(allNumbers){
+
+            var numbers = allNumbers.filter(function (n) {
+                return (n.digits.toString()).match(regexp);
+            });
+
+            var sumArray = numbers.map(function (n){
+                return parseInt(n.count)
+            });
+
+            sum = sumArray.reduce(function(x, y) {
+                return x + y
+            });
+
+        });
+
+            this.result = sum
+    }
+
+
+
+
     }
 });
 
-$("#n1").on("touchmove", function(d){
-    alert("hi")
-});
+// $("#n1").on("touchmove ", function(d){
+//     alert("hi")
+// });
 
 Tangle.classes.ClickableNumber = {
     initialize: function (element, options, tangle, variable) {
