@@ -306,7 +306,7 @@ function step_01(){
             var thisId = $(this).text();
             var bgcolor = $('rect#d' + thisId).css('fill');
             var tooltip = $('rect#d' + thisId).attr("value");
-            tooltip = tooltip + " машин";
+            tooltip = tooltip + " авто";
             $(this).css("background-color", bgcolor);
             $(this).attr("data-tippy-content", tooltip);
         })
