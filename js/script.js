@@ -306,6 +306,7 @@ function step_01(){
             var thisId = $(this).text();
             var bgcolor = $('rect#d' + thisId).css('fill');
             var tooltip = $('rect#d' + thisId).attr("value");
+            tooltip = tooltip + " машин";
             $(this).css("background-color", bgcolor);
             $(this).attr("data-tippy-content", tooltip);
         })
@@ -558,18 +559,10 @@ $('.number-input').on('input', function() {
     var n3 = $("#n-3").val();
     var n4 = $("#n-4").val();
 
-    if (n1 === "" || isNaN(n1)) {
-        n1 = ","
-    }
-    if (n2 === ""  || isNaN(n2)) {
-        n2 = ","
-    }
-    if (n3 === "" || isNaN(n3)) {
-        n3 = ","
-    }
-    if (n4 === ""  || isNaN(n4)) {
-        n4 = ","
-    }
+    if (n1 === "" || isNaN(n1)) { n1 = "," }
+    if (n2 === "" || isNaN(n2)) { n2 = "," }
+    if (n3 === "" || isNaN(n3)) { n3 = "," }
+    if (n4 === "" || isNaN(n4)) { n4 = "," }
 
     var n = "^" + n1 + n2 + n3 + n4;
     n = n.replaceAll(",", "[0-9]");
@@ -583,81 +576,15 @@ $('.number-input').on('input', function() {
 //якщо є хоч щось
     if(n != "^[0-9][0-9][0-9][0-9]"){
     retrieve_chart_data(function(allNumbers){
-
-        var numbers = allNumbers.filter(function (n) {
-                return (n.digits.toString()).match(regexp);
-        });
-
-        var sumArray = numbers.map(function (n){
-            return parseInt(n.count)
-        });
-
-        var sum = sumArray.reduce(function(x, y) {
-           return x + y
-        });
-
-            $("#inputResult").html(sum)
+        var numbers = allNumbers.filter(function (n) { return (n.digits.toString()).match(regexp);   });
+        var sumArray = numbers.map(function (n){ return parseInt(n.count) });
+        var sum = sumArray.reduce(function(x, y) { return x + y });
+        $("#inputResult").html(sum)
     });
 }
-
 });
 
 //mobile form
-
-// $('#m1').on('drag', function() {
-
-
-//     var m1 = $("#m-1").innerHTML;
-//     alert(m1);
-//     // var m2 = $("#m-2").val();
-//     // var m3 = $("#m-3").val();
-//     // var m4 = $("#m-4").val();
-//
-//     if (m1 === "" || isNaN(m1)) {
-//         m1 = ","
-//     }
-//     if (m2 === ""  || isNaN(m2)) {
-//         m2 = ","
-//     }
-//     if (m3 === "" || isNaN(m3)) {
-//         m3 = ","
-//     }
-//     if (m4 === ""  || isNaN(m4)) {
-//         m4 = ","
-//     }
-//
-//     var n = "^" + m1 + m2 + m3 + m4;
-//     n = n.replaceAll(",", "[0-9]");
-//     var regexp = new RegExp(n);
-//
-// //якщо немає жодної цифри
-//     if(n === "^[0-9][0-9][0-9][0-9]"){
-//         $("#inputResult-m").html("")
-//     }
-//
-// //якщо є хоч щось
-//     if(n != "^[0-9][0-9][0-9][0-9]"){
-//         retrieve_chart_data(function(allNumbers){
-//
-//             var numbers = allNumbers.filter(function (n) {
-//                 return (n.digits.toString()).match(regexp);
-//             });
-//
-//             var sumArray = numbers.map(function (n){
-//                 return parseInt(n.count)
-//             });
-//
-//             var sum = sumArray.reduce(function(x, y) {
-//                 return x + y
-//             });
-//
-//             $("#inputResult-m").html(sum)
-//         });
-//     }
-
-// });
-
-
 
 String.prototype.replaceAll = function(character,replaceChar){
     var word = this.valueOf();
@@ -670,83 +597,47 @@ String.prototype.replaceAll = function(character,replaceChar){
 
 
 
-
+/* Гралка для моб.версії*/
 
 var tangle = new Tangle (document.getElementById("calculator"), {
     initialize: function () {
-        this.n1 = 0; this.n2 = 0; this.n3 = 0; this.n4 = 0;
+        this.n1 = -1; this.n2 = -1; this.n3 = -1; this.n4 = -1;
     }, update: function () {
+        var m1 = this.n1, m2 = this.n2, m3 = this.n3, m4 = this.n4;
 
-
-        var m1 = this.n1,
-            m2 = this.n2,
-            m3 = this.n3,
-            m4 = this.n4;
-
-    if (this.n1 === -1) {
-        m1 = ","
-    }
-    if (this.n2 === -1) {
-        m2 = ","
-    }
-    if (this.n3 === -1) {
-        m3 = ","
-    }
-    if (this.n4 === -1) {
-        m4 = ","
-    }
+    if (this.n1 === -1) { m1 = "," }
+    if (this.n2 === -1) { m2 = "," }
+    if (this.n3 === -1) { m3 = "," }
+    if (this.n4 === -1) { m4 = "," }
 
     var n = "^" + m1 + m2 + m3 + m4;
     n = n.replaceAll(",", "[0-9]");
     var regexp = new RegExp(n);
 
-//якщо немає жодної цифри
+//якщо немає жодної цифри:
     if(n === "^[0-9][0-9][0-9][0-9]"){
-        this.result = "оберіть від 0 до 9"
+        this.result = ""
     }
-
-
-        var sum;
-        if(n != "^[0-9][0-9][0-9][0-9]"){
+//якщо є:
+    var sum;
+    if(n != "^[0-9][0-9][0-9][0-9]"){
 
         retrieve_chart_data(function(allNumbers){
-
             var numbers = allNumbers.filter(function (n) {
                 return (n.digits.toString()).match(regexp);
             });
-
             var sumArray = numbers.map(function (n){
                 return parseInt(n.count)
             });
-
             sum = sumArray.reduce(function(x, y) {
                 return x + y
             });
-
         });
-
             this.result = sum
     }
-
-
-
-
     }
 });
 
-// $("#n1").on("touchmove ", function(d){
-//     alert("hi")
-// });
-
-Tangle.classes.ClickableNumber = {
-    initialize: function (element, options, tangle, variable) {
-        element.onclick = function () {
-            var m1 = tangle.getValue("n1");
-            alert(m1)
-
-        };
-    }
-};
 
 
 
