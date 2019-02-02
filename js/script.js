@@ -535,7 +535,7 @@ init();
 
 
 
-
+//desktop form
 $('.number-input').on('input', function() {
     var sanitized = $(this).val().replace(/[^0-9]/g, '');
     $(this).val(sanitized);
@@ -590,6 +590,65 @@ $('.number-input').on('input', function() {
             $("#inputResult").html(sum)
     });
 }
+
+});
+
+//mobile form
+
+$('.number-input-m').on('input', function() {
+    var sanitized = $(this).val().replace(/[^0-9]/g, '');
+    $(this).val(sanitized);
+    var myLength = $(this).val().trim().length;
+    if(myLength == 1 ){
+        $(this).next('.number-input-m').focus();
+    }
+
+    var m1 = $("#m-1").val();
+    var m2 = $("#m-2").val();
+    var m3 = $("#m-3").val();
+    var m4 = $("#m-4").val();
+
+    if (m1 === "" || isNaN(m1)) {
+        m1 = ","
+    }
+    if (m2 === ""  || isNaN(m2)) {
+        m2 = ","
+    }
+    if (m3 === "" || isNaN(m3)) {
+        m3 = ","
+    }
+    if (m4 === ""  || isNaN(m4)) {
+        m4 = ","
+    }
+
+    var n = "^" + m1 + m2 + m3 + m4;
+    n = n.replaceAll(",", "[0-9]");
+    var regexp = new RegExp(n);
+
+//якщо немає жодної цифри
+    if(n === "^[0-9][0-9][0-9][0-9]"){
+        $("#inputResult-m").html("")
+    }
+
+//якщо є хоч щось
+    if(n != "^[0-9][0-9][0-9][0-9]"){
+        retrieve_chart_data(function(allNumbers){
+
+            var numbers = allNumbers.filter(function (n) {
+                return (n.digits.toString()).match(regexp);
+            });
+
+            var sumArray = numbers.map(function (n){
+                return parseInt(n.count)
+            });
+
+            var sum = sumArray.reduce(function(x, y) {
+                return x + y
+            });
+
+            $("#inputResult-m").html(sum)
+        });
+    }
 
 });
 
