@@ -346,7 +346,7 @@ table {
   table td, table th {
     vertical-align: text-top;
     padding: 1px;
-    border: 0.1mm solid rgba(0, 0, 0, 0.25); }
+    border-bottom: 0.1mm solid rgba(0, 0, 0, 0.25); }
   table td {
     white-space: nowrap;
     text-align: right;

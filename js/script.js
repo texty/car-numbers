@@ -352,7 +352,9 @@ function databind(data) {
         .duration(1000)
         //.attr('width', 40)
         //.attr('height', 40)
-        .style('fill', function(d) { return colourScale(d.alpha); });
+        .style('fill', function(d) {
+            debugger;
+            return colourScale(d.alpha); });
     //.attr('fillStyle', "#bebebe");
 
     var exitSel = join.exit()
