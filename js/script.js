@@ -353,7 +353,6 @@ function databind(data) {
         //.attr('width', 40)
         //.attr('height', 40)
         .style('fill', function(d) {
-            debugger;
             return colourScale(d.alpha); });
     //.attr('fillStyle', "#bebebe");
 
@@ -635,7 +634,7 @@ var tangle = new Tangle (document.getElementById("calculator"), {
                 return x + y
             });
         });
-            this.result = sum
+            this.result = sum + " авто"
     }
     }
 });
