@@ -97,7 +97,7 @@ var annotations3 =
             "x": 50,
             "y": 30,
             "path": "M-16,-118C-124,-118,-155,-118,-226,-118",
-            "text": "пустий коридор - номери з шістками",
+            "text": "найменш заповнені коридори - номери з шістками",
             "textOffset": [
                 4,
                 -114
@@ -178,8 +178,14 @@ group.append('marker')
     .append('path')
     .attr('d', 'M-6.75,-6.75 L 0,0 L -6.75,6.75')
 
-var colourScale = d3.scaleLinear()
+// var colourScale = d3.scaleLinear()
+//     .domain([0, 2000])
+//     // .range(['white','crimson']);
+//     .range(['white', "#f582e9"]);
+
+var colourScale = d3.scalePow()
     .domain([0, 2000])
+    .exponent(0.7)
     // .range(['white','crimson']);
     .range(['white', "#f582e9"]);
 
