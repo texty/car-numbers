@@ -133,16 +133,10 @@ var svg = d3.select("svg#mychart");
 
 var group = svg.append("g").attr("transform",
         "translate(" + 30 + "," + 0 + ")");
-// ww = +svg.attr("width"),
-// hh = +svg.attr("height"),
+
 width = 1 * width - margin.left - margin.right;
 height = 1 * height - margin.top - margin.bottom;
-// var svg = d3.select(".chart")
-//     .append("svg")
-//     .attr("viewBox", "0 0 800 800")
-//     .attr("preserveAspectRatio", "xMinYMin meet")
-//     // .attr("width", width + margin.left + margin.right)
-//     // .attr("height", height + margin.top + margin.bottom)
+
 
 // Labels of row and columns
 var myGroups = [...Array(100).keys()].map((e) => {e = '' + e; return e.length == 1 ? '0' + e : e;} )
