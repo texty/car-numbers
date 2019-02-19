@@ -101,8 +101,11 @@
         </div>
     </div>
 </div>
+
+<div id="arrow-down" class="bounce" style="position:absolute;right:48%;"></div>
+
 <div id="header">
-    <img style="width:100%; height:auto;" src="img/cover.jpg"/>
+    <img id="cover" style="width:100%; height:auto;" src="img/cover.jpg"/>
 <!--<h1>«У мене, як у Джеймса Бонда». <br>Хто й навіщо купує красиві номерні знаки за три тисячі доларів</h1>-->
 </div>
 
@@ -483,7 +486,25 @@
 </div>
 
 <script>
-//    $('[data-disable-touch-keyboard]').attr('readonly', 'readonly');
+    setTimeout(function(){
+
+        var coverHeight = document.getElementById("cover").getBoundingClientRect().height;
+        document.getElementById("arrow-down").style.top = coverHeight - (window.innerWidth / 10) + "px";
+        $("#arrow-down").append('<img id="arrow-down-pic" title="скрольте вниз" style="width:5vw;" src="img/arrow-down2.png"/>');
+
+
+        window.addEventListener("resize", function(){
+            var newCoverHeight = document.getElementById("cover").getBoundingClientRect().height;
+            document.getElementById("arrow-down").style.top = newCoverHeight - (window.innerWidth/10) + "px";
+        });
+
+    },100);
+
+    $("#arrow-down").click(function() {
+        $('html,body').animate({
+                    scrollTop: $(".introduction").offset().top},
+                'slow');
+    });
 </script>
 
 <script type="text/javascript">
