@@ -346,10 +346,11 @@ table {
   table td, table th {
     vertical-align: text-top;
     padding: 1px;
+    text-align: right;
     border-bottom: 0.1mm solid rgba(0, 0, 0, 0.25); }
   table td {
     white-space: nowrap;
-    text-align: center;
+    text-align: right;
     padding-right: 3px;
     font-family: "Ubuntu Mono", serif; }
   table td:nth-child(1), table th:nth-child(1) {
