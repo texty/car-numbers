@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Хто й навіщо купує красиві номерні знаки за три тисячі доларів</title>
+
+<!-- OpenGraph Meta Tags -->
+<meta property="og:site_name"
+      content="«У мене, як у Джеймса Бонда»"/>
+<meta property="og:type" content="http://texty.org.ua/d/2019/numbers/"/>
+<meta property="og:title"
+      content="«У мене, як у Джеймса Бонда»"/>
+<meta property="og:image" content="http://texty.org.ua/d/2019/numbers/img/anons_cover.jpg"/>
+<meta property="og:description"
+      content="Хто й навіщо купує красиві номерні знаки за три тисячі доларів"/>
+<meta property="og:url" content="http://texty.org.ua/d/2019/numbers/"/>
+
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:site" content="@textyorgua"/>
+<meta property="twitter:account_id" content="49572937"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:url" content="http://texty.org.ua/d/2019/numbers/"/>
+<meta name="twitter:title"
+      content="«У мене, як у Джеймса Бонда»"/>
+<meta name="twitter:description"
+      content="Хто й навіщо купує красиві номерні знаки за три тисячі доларів"/>
+<meta name="twitter:image:src" content="http://texty.org.ua/d/2019/numbers/img/anons_cover.jpg"/>
+<meta name="twitter:image:width" content="1200"/>
+<meta name="twitter:image:height" content="630"/>
+
+
+<!-- Other Meta Tags -->
+<meta name="title"
+      content="«У мене, як у Джеймса Бонда»">
+<meta name="description"
+      content="Хто й навіщо купує красиві номерні знаки за три тисячі доларів">
+
+
+<!-- Links -->
+<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+<link rel="stylesheet" href="../lib/TangleKit/TangleKit.css"/>
+<link rel="stylesheet" href="../css/styles.css"/>
+
+<!-- Scripts -->
+<script src="../lib/jquery-2.1.4.min.js"></script>
+<script src="../lib/d3.v4.js"></script>
+<script src='../lib/intersection-observer.js'></script>
+<script src="../lib/Tangle.js"></script>
+
+<script src="../lib/TangleKit/mootools.js"></script>
+<script src="../lib/TangleKit/sprintf.js"></script>
+<script src="../lib/TangleKit/BVTouchable.js"></script>
+<script src="../lib/TangleKit/TangleKit.js"></script>
+
+
+<script src='../lib/scrollama.min.js'></script>
+<script src="../js/swoopy-drag.js"></script>
+<script src="../lib/share-behavior.js"></script>
+
+
+<style>
+
+    path {
+        fill: none;
+        stroke: black;
+    }
+
+    .social-icons  path {
+
+        fill: black;
+    }
+
+
+</style>
+
+<body>
+<div id="logo-icons">
+    <div class="logo">
+        <a href="http://texty.org.ua/" target="_blank"><img class='gif' style="width:100%" src="../img/black_logo.gif"/></a>
+    </div>
+
+
+    <div class="social-icons">
+        <div id="translate"><a href="http://texty.org.ua/d/2019/numbers/"> <span> Українською </span> </a></div>
+        <div class="facebook">
+            <a class='share-btn'
+               href="https://www.facebook.com/sharer/sharer.php?u=http://texty.org.ua/d/2019/numbers/">
+                <svg class="cover" id="facebook" viewBox="0 0 448 512">
+                    <path d="M448 80v352c0 26.5-21.5 48-48 48h-85.3V302.8h60.6l8.7-67.6h-69.3V192c0-19.6 5.4-32.9 33.5-32.9H384V98.7c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9H184v67.6h60.9V480H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48z"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="twitter">
+            <a class='share-btn' href="https://twitter.com/intent/tweet?text=http://texty.org.ua/d/2019/numbers/">
+                <svg id="twitter" viewBox="0 0 448 512">
+                    <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-48.9 158.8c.2 2.8.2 5.7.2 8.5 0 86.7-66 186.6-186.6 186.6-37.2 0-71.7-10.8-100.7-29.4 5.3.6 10.4.8 15.8.8 30.7 0 58.9-10.4 81.4-28-28.8-.6-53-19.5-61.3-45.5 10.1 1.5 19.2 1.5 29.6-1.2-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3a65.447 65.447 0 0 1-29.2-54.6c0-12.2 3.2-23.4 8.9-33.1 32.3 39.8 80.8 65.8 135.2 68.6-9.3-44.5 24-80.6 64-80.6 18.9 0 35.9 7.9 47.9 20.7 14.8-2.8 29-8.3 41.6-15.8-4.9 15.2-15.2 28-28.8 36.1 13.2-1.4 26-5.1 37.8-10.2-8.9 13.1-20.1 24.7-32.9 34z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="arrow-down" class="bounce" style="position:absolute;right:48%;"></div>
+
+<div id="header">
+    <img id="cover" src="../img/cover.jpg"/>
+</div>
+
+<div class="text-content introduction">
+    <h3>The man unwillingly puts aside his tablet with “95th Kvartal” (popular comedy show) running on and lowers the car window. His car is parked next to a posh seafood restaurant on Volodymyrska Street. He is around 40 year old, with some belly showing under the gray printed t-shirt, high bald spots in his hair are the first signs of age. But he can be James Bond just for three thousand dollars. His vehicle registration plate proudly demonstrates 0007 number.
+    </h3>
+
+    <h5 style="text-align: right; margin:80px auto;">By: Yaroslava Tymoshchuk, Anatoliy Bondarenko,<br> Yevheniya Drozdova, Nadya Kelm</h5>
+
+    <p>In Ukraine there are another 1535 of “Mr.Bond"s with the same number on their license plates. One can officially pay 20 000 UAH (~USD700) at a car registration identifier center for such combination of numbers but there is no guarantee it will be available. One can also reach out to go-betweens for their assistance: normally they charge 3000 USD for a “Bond’s” number plate.
+    </p>
+
+    <p>The man from Volodymyrska Street is ready to pay even more. In 2014 he bought his Land Rover and paid an extra couple of thousands of hryvnas to the salesman at car dealership to arrange him “prestige" car plate. Now he is satisfied with this decision: “I have the plate number just like James Bond” – he says proudly before lifting the window up.
+    </p>
+
+
+
+
+</div>
+<!-- Create a div where the graph will take place -->
+
+<section id='scroll'>
+    <!--  graphic container  -->
+    <div class='scroll__graphic sticky'>
+        <div class='chart'>
+            <svg id="mychart" width="100%" height="100%" viewBox="0 0 900 900"></svg>
+            <!--<div id="my_dataviz"></div>-->
+        </div>
+    </div>
+
+    <!--  step/text container  -->
+    <div class='scroll__text'>
+        <div class='step step0' data-step='0' data-scrollama-index="0">
+            <p class="">100x100 square on this chart depicts all possible number combinations for regular vehicle registration plates. Theoretically there are 10 000 of them: from <span class="car-number">0000</span> to <span class="car-number">9999</span>. Vertical axis is for a first two digits from plate number and horizontal axis is for the last two, so each small square is a possible four-digit combination. The color intensity proportional to the frequency of each combination obtained from data (we used most popular type of Ukrainian plate format, with four digits inside).</p>
+            <p><b>If the car owners got their registration plates randomly the chart would look just like this</b> – each square is randomly colored, there is no symmetry or patterns.
+            </p>
+        </div>
+
+        <div class='step step1' data-step='1' data-scrollama-index="1">
+            <p>But  <b>the real picture differs from the random one</b>. We have processed the <a class="dashed-link" href="http://texty.org.ua/cars/" target="_blank">data of millions of real vehicle registration numbers</a> issued between 2013 and 2019 and drew the chart demonstrating clear patterns correlated with the symmetry of digits in the number. It means that at least some of car owners pay extra efforts to get the plate number that looks “nicer”. </p>
+        </div>
+
+
+        <div class='step step2' data-step='2' data-scrollama-index="2">
+            <p>The more intense pink color corresponds to the most popular digits in number plates. These numbers are <span class="car-number">7777</span>, <span class="car-number">0001</span>, <span class="car-number">8888</span>, <span class="car-number">0777</span>.  Car plates with sevens are among the most popular ones. It looks as if the owners consider this digit empowered with a magic.
+            </p>
+        </div>
+
+
+        <div class='step step3' data-step='3' data-scrollama-index="3">
+            <p>Also popular are the vehicle ID numbers placed on the diagonal of the chart – those are numbers which consist of two identical pairs of digits: <span class="car-number">1212</span>, <span class="car-number">2525</span>, etc. “Crosses” сrossing the diagonals are the numbers containing three identical digits – these are also in demand.
+            </p>
+        </div>
+
+
+        <div class='step step4' data-step='4' data-scrollama-index="4">
+            <p>On the contrary most of the number plates which start with 6, as well as those with many 6 in them, are not very popular – there are less of them than any other combinations, in average.
+            </p>
+
+            <p class="desk"><b>Place your mouse over the spots on the chart to see what number it is.</b></p>
+        </div>
+
+
+        <div class='desk step step5' data-step='5' data-scrollama-index="5">
+            <h3>Let’s make an experiment!</h3>
+            <p>Please enter one or more <b>digits</b> of a hypothetical license plate and see how many people have these digits in their number plates. This form ignores any other characters besides digits.
+            </p>
+
+            <div id="letPlay">
+                <input maxlength="1" id="n-1" class="number-input"/>
+                <input maxlength="1" id="n-2" class="number-input"/>
+                <input maxlength="1" id="n-3" class="number-input"/>
+                <input maxlength="1" id="n-4" class="number-input"/>
+            </div>
+
+            <div id="inputResult" style=""></div>
+
+        </div>
+
+        <div class='step step-text step6' data-step='6' data-scrollama-index="6">
+            <p style="margin-bottom: 50px">The chart below shows 15 most popular number plates.</p>
+            <div id="barChartContainer">
+                <svg id="barChart" width="100%" height="300px"></svg>
+            </div>
+
+            <p>“The best” number plates can often be seen on the most expensive cars – the owner, probably, believes that in this way he emphasizes his importance and status.
+            </p>
+
+            <p>Suppose there is a certain amount of cars of various brands among the vehicles with “ordinary” number plates – for example DAEWOO, FORD, TOYOTA, etc. How will the number of cars of various brands change if we select the “prestige” plates?
+            </p>
+
+            <table id="table"></table>
+
+            <p>From this table we can see that most expensive brands are among the leaders: most of such cars have “prestige”, symmetrical  numbers. It seems  their owners also spend some good money to buy a special number plate to emphasize their status even more.
+            </p>
+
+            <p>There is another interesting fact about “prestige” plates – people often think that the drivers of cars with such number plates are tending to misbehave on the road more frequently than the drivers with “regular” numbers. In seems, the correlation between these two variables – “fancy” number plate and driver’s misbehave does exist. To check this we have used another data – thousands of records from <a class="dashed-link"  href="http://autocarma.ua/" target="_blank">http://autocarma.ua/</a>. At this site drivers rate each other for their driving habits. </p>
+
+
+            <p style="margin-top:30px;">To eliminate the influence of the cost of the car we compared only expensive cars – the ones with <b>“fancy”</b> number plates (group 1) and the ones with <b>regular</b> plates (group 2). The sample was 700 cars for each group. The average score of misbehave on a road makes -16 points for the group of cars with "fancy" number plates, it is three points worse than the score for the group with “regular” numbers (-13 points). This result is statistically significant. The probability of getting it by chance is only 0.5%.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+
+<div class="text-content">
+    <div class="mob">
+        <h3>Let’s make an experiment!</h3>
+        <p>Введіть одну чи більше <b>цифр</b> від 0 до 9 з номерного знака ― і подивіться, скільки людей мають такі цифри у номері. Оберіть «-1», якщо хочете залишити поле пустим. Наприклад, комбінація «2 -1 2 -1» покаже скільки є номерів, де перша і третя цифри - двійки.</p>
+
+        <div id="calculator" class="mob">
+            <h1>
+                <span id="n1" data-var="n1" class="TKAdjustableNumber" data-min="-1" data-max="9"></span>
+                <span id="n2" data-var="n2" class="TKAdjustableNumber" data-min="-1" data-max="9"></span>
+                <span id="n3" data-var="n3" class="TKAdjustableNumber" data-min="-1" data-max="9"></span>
+                <span id="n4" data-var="n4" class="TKAdjustableNumber" data-min="-1" data-max="9"></span>
+            </h1>
+
+            <h1 style="white-space: nowrap"><span class="mob TKAdjustableNumber" data-var="result" id="result"></span></h1>
+            <!--<input type="number" maxlength="1" id="m-1" class="number-input-m"/>-->
+            <!--<input type="number" maxlength="1" id="m-2" class="number-input-m"/>-->
+            <!--<input type="number" maxlength="1" id="m-3" class="number-input-m"/>-->
+            <!--<input type="number" maxlength="1" id="m-4" class="number-input-m"/>-->
+        </div>
+
+
+
+    </div>
+
+    <h3>“We do everything legally. It’ll take just an hour to get your plate number!”</h3>
+
+    <p>I tried to buy some fancy plates officially, but failed. Police service centers will charge you for some limited combinations of digits. Most expensive  – <span class="car-number">0001</span> - <span class="car-number">0005</span>, <span class="car-number">0007</span> - <span class="car-number">0009</span>, <span class="car-number">5555</span>, <span class="car-number">7777</span> (around USD 700 ), <span class="car-number">1111</span>, <span class="car-number">2222</span>, <span class="car-number">3333</span>, <span class="car-number">4444</span>, <span class="car-number">8888</span>, <span class="car-number">9999</span> – half of that price. The cheapest ones – 0006 і 6666 will be three hundred bucks.
+
+    <p>Unfortunately officials don’t have “nice” numbers at store. So I found Artem, who is eager to help me for a some additional price. Artem is a manager for a firm which sells “prestige” numbers  online.</p>
+
+    <p>“No wonder that service center doesn’t have a good combination of digits. They never have” - he told me for sure - “but I’ve got some”.</p>
+
+    <p>I start with most popular ones: <span class="car-number">7777</span>, <span class="car-number">8888</span>, <span class="car-number">5555</span>, <span class="car-number">0007</span>. But they will cost you a dime - USD 3,500 for sevens; 3,200 – for eights; 2,000 – for fives. James Bond number costs USD 3,000.</p>
+
+    <p>When I complain about high cost, Artem starts to combine the options: 0008 for a mere 1800 USD, 0808 – 1000 USD, and as for <span class="car-number">0777</span>, <span class="car-number">7778</span>, <span class="car-number">7775</span> – they cost 1200-1300 USD each.</p>
+
+    <p> I pretend to sigh as if it is too tempting but too expensive at the same time. Artem does not want to lose a client and offers me such lure as individualized license plate.</p>
+
+    <p>Individualized plates can be bought at MIA service centers and cost 300 UAH for first three characters and 90 UAH for each next character  with maximum of eight characters allowed in a plate number.</p>
+
+    <p> Afterwards Artem admits that trends do exist: the difference is the same as between a real bag by Chanel and a fake one. With a naked eye one can see no differences, but the owners of the originals always recognize the fakes and would never wear them themselves.</p>
+
+    <p>Artem supports this theory by his own experience. He’s got <span class="car-number">0070</span> on his plate number and says “it’s cool and also rare”. There is no such number in database now, but I can wait till somebody turns it in.</p>
+
+    <p>A former employee of a regional Service Center, who had prefer to stay anonymous for obvious reasons, shared his knowledge on how “fancy” plates are usually issued: “Though most of the “prestige” plates can be bought officially, the law has a gap for numbers like <span class="car-number">1122</span>, <span class="car-number">3443</span>, <span class="car-number">4000</span>, <span class="car-number">7778</span>. You'll never get these numbers accidentally while registering your car. At least in old, unreformed IRED’s (Interregional Registration and Examination Department) the top brass told the employees to select the most “delicious” numbers carefully and then reserved them for their own use (for their cars, or for other IRED employees, for the relatives or for local authorities, etc.)</p>
+
+    <p>Often there was a direct order from Kyiv to issue somebody of the local clients a “nice” number plate. Many of IRED top managers drove the cars with “fancy” number plates.</p>
+
+    <p>The cool numbers symbolize status, it is signal sent to police, thieves and neighbors that it is better not to bother such car and its owner since she or he has got “high connections” at the Ministry (of Internal Affairs).</p>
+
+
+
+    <h3>“The magic of the number protects”</h3>
+    <p>38-year old Vyacheslav from Kyiv spends most of his working time waiting at parking, or near restaurants and boutiques. Today he is at the parking of “Gulliver” shopping mall, waiting in his boss’s Land Rover with <span class="car-number">0700</span> at its number plate. Usually he does not speak a lot with his boss, just small talks about the weather, but still he can explain why this man needs those “cool plate number”.</p>
+
+    <p> “Just like a woman chooses her handbag matching it with the certain color of her shoes a man chooses his private number plate. There is no sense to put a plate worth 3000 dollars on “Lanos” but on a status car a proper number plate is a must” – says Vyacheslav. In his opinion the hidden beauty behind such number is that it stands out of the crowd and is easy to memorize.</p>
+
+    <p> Vyacheslav believes that “sevens” is the best choice for a vehicle registration number. “It just fits the car a lot. It is a number of the lucky ones, in a casino the win falls out by seven” – he says.</p>
+
+    <p>He also thinks that the car drivers with fancy plate numbers have extra advantage on the road. “Let imagine” – he says – “Here’s me, driving some cheap brand. I may break some rule, for example, to forget to turn the turn signal on. What will they do to me? Most likely they will stop me, ask for my insurance, check me through their database. And here is Land Rover with fancy number plate driving next to my car and he commits the same violation – will the stop him? No, because we all know who might be driving there. It could be MP, for example”.</p>
+
+    <p> I argue that the road police can stop any car, but Vyacheslav does not agree with me.</p>
+
+    <p> “But if the policeman is the only one on duty, how can he stop two cars at the same time with one traffic stick? No, he’ll be stopping me”. (Actually this type of stop, with a traffic police stick, is prohibited now. The stick can be used for regulating purposes only).
+
+    <p> Vyacheslav himself is ready to pay respect to the drivers with fancy number plates on their cars, when not at work.</p>
+
+    <p>“When I drive my own, simple car and see another with a “special” number it won’t take me a lot of efforts to give way to him. Maybe, that somebody is in hurry, or maybe it is a professional driver behind the wheel, just like me”.</p>
+
+    <p>Moreover in Vyacheslav's opinion prestige plates are not just insignia. A choice like this implies some religiousness.</p>
+
+    <p>“Look, we wear our pectoral crosses, we decorate our homes with holy icons – and it helps! With plates it is the same. You just feel more confident when protected by the magic of the number”.</p>
+
+    <p>Suddenly Vyacheslav is managed to change his mind while reflecting on the magic:</p>
+
+    <p>“Why would one need these swanky number plates after all? What for? Even if you come right next to [President] Poroshenko’s door on a car with such numbers he won’t open it for and won’t invite you in” – after this conclusion we say goodbye to each other.</p>
+
+
+
+    <h3>“If you want it – you should get it, even if it’s costly”</h3>
+
+    <p>When Nazar was a little boy his parents told him not to look down but to look around in order to find something interesting. Nazar grew up in a regional town of 40 000 people in Zakarpattya and always knew that he wanted another life.</p>
+
+    <p>After getting his university degree he changed his work a couple of times, moved to Kyiv, became an advertising specialist. Being taught to look around as a child, in Kyiv grown up Nazar started noticing fancy numbers on the plates of some car owners. Dressed in expensive tailored suits, they were coming out of their prestige cars and walked into even more prestige restaurants to live their luxury big city life.</p>
+
+    <p>Meanwhile it took a long and hard way for Nazar to get there – to become one of “the drivers with status”. He had to work a lot – teaching at school, going to Poland for working abroad, selling advertising. In Poland he was cheated by a local agent because the living conditions and the pay differed from the promised ones. He had to sleep on the floor and to borrow the basic kitchenware from his roommates to cook himself some meal. Later in Kyiv Nazar had to sleep in the bistro for two weeks before official opening of that place while working on its ad design.</p>
+
+    <p>In short this man knows the actual price of the money earned and realizes that he could spend these 12 000 UAH (~USD 400) on something more practical that the fancy plate number for his “Renault Megane”. But Nazar decided that he deserved it. After all, he is an owner of an ad agency now, in his 30, and he can afford it.</p>
+
+    <p>“I did it for myself, if you know what I mean, for my own satisfaction. Just think - would you like a new dress? And a new bag to match it? It’s all the same! Sometimes I think – life is so short! If you really want something you should get it, even if it’s costly. I am used to achieve everything in this life relying just on myself. Not chewing the snots (prison slang expression meaning “to do nothing”) and doubts but just doing it” – Nazar shares his philosophy with me.</p>
+
+    <p> And so Nazar did not chew the snots and went to “the right people” in his native town, where he is registered. It was half a year ago. At a previously agreed time he drove up to the service center, where a middleman waited for him. After a brief inspection of the car the documents had been issued. Just an hour – and Nazar got his fancy number plate! Why didn’t he try to do everything officially at the service center without intermediary? Nazar is convinced that in that case everything would not have worked properly - either the computer would go out of order or the proper number plate would not be available. But he did everything smoothly!</p>
+
+    <p> He paid 12 000 hryvnia for the new plate for his car – it would not be considered expensive in Kyiv, but it is a big sum of money for a regional city. In Nazar’s native town there are also “car trends” and number plate fashion. For example, one “very respected father of the family” ordered four number plates: <span class="car-number">9990</span> for himself, <span class="car-number">9991</span> for his wife, <span class="car-number">9993</span> for his daughter and <span class="car-number">9994</span> for the son. Everyone who knows and understands the local rules could identify the family by these attributes of a luxury life.</p>
+
+    <p> As for Nazar – his number on the plate is not a common one. As his friend said “You must be a strong man with a strong spirit!” In fact Nazar did not see anybody driving the car with such number plate in his native region and in Kyiv there are also only few of them.</p>
+
+    <p>Sometimes he finds passengers via Bla-Bla-Car  ( car sharing service ) and they often look at him suspiciously. Once in Kyiv an old lady was crossing the road, recognized Nazar’s plate number, stood still, crossed herself in horror and ran the opposite way.</p>
+
+    <p> It is a wonder what was the priest thinking whom Nazar had asked to bless the car (with a help of special pray and holy water) but after all – he was doing his job and kept his opinion undeclared, just as his working ethics demands.</p>
+
+    <p> Nazar states (there’s no chance to prove it now), that once there was a case in Zhytomyr when even the police got scared of his number. He drove the red light and the road police started chasing him with a siren on. But after they had spoken his plate number through the loudspeaker they turned around and drove away.</p>
+
+    <p>Thus the combination of digits helped Nazar to avoid the penalty bill. After all Nazar is surprised with a high attention paid to his car plate number – <span class="car-number">6666</span>. He does not see any “signs of devil” in this case because the devil number is three sixes in a row, not the four.</p>
+
+    <p> Nazar has got his sixes for less money and they have become a truly unique plate number – not a lot of people have the same. He has not chosen more popular numbers, because he feels like the roads are overloaded with the “fashion for seven’s”.
+
+    <p>“The seven is considered a superior digit for auto plates, but I don’t like it. There are too much of them now, decent people won’t drive with them. The eight is authoritative digit to be put on the plates, because “8” means “the infinity”. Privileged toffs are crazy about it, but there are too much of them now, anyway. <span class="car-number">0001</span> is really a cool number, no one will mess with you when you drive a car with <span class="car-number">0001</span> plate, it is obvious – there is a serious person driving! Whom is such number for? May be for Groysman (Ukrainian Prime Minister)? “Daddy” is got to be the first” – says Nazar.</p>
+
+    <p> Excessive attention is a side effect of the status. Nazar agrees that he overpays for his self-affirmation, but he can’t resist it.</p>
+
+    <p> “May be on Majorca the reach and important person would be recognized by their sunglasses or the smartphone. But here in Ukraine what is the best thing for a person to show off? Right! It is the car. Such a wacky rule – if you are with “cool plates” you are a cool guy!”</p>
+
+    <div id="button">
+        <h3>TEXTY.ORG.UA незалежне видання без навʼязливої реклами і замовних матеріалів. Щоб працювати і далі нам потрібна ваша підтримка. </h3>
+
+        <div id="button-container">
+            <button onclick="location.href='https://www.liqpay.ua/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXlkb25hdGUiLCJwdWJsaWNfa2V5IjoiaTc2NjUwNTYyODI3IiwiYW1vdW50IjoiNTAiLCJjdXJyZW5jeSI6IlVBSCIsImRlc2NyaXB0aW9uIjoi0J%2FQvtC20LXRgNGC0LLQsCIsInR5cGUiOiJkb25hdGUiLCJsYW5ndWFnZSI6InVrIn0%3D&signature=YFkd4Z74QCJXRxMTPoWm0JVlkX4%3D'" id="support-us">ПОЖЕРТВУВАТИ</button>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+<!--<div class="on_click"> click_me!</div>-->
+<script src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/mostPopular.js"></script>
+<script src="js/appendTable.js"></script>
+
+<div class="read-more" style="margin:50px 0 100px 0;">
+    <h3 class="read-text"><b>Read also:</b></h3>
+    <div class="read-more-third">
+        <a target="_blank" href="http://texty.org.ua/d/fb-trolls/index_eng.html"><img style="width:90%;"
+                                                                 src="img/troll.png"
+                                                                 class="img-responsive" alt="Troll Network"></a>
+    </div>
+    <div class="read-more-second">
+        <a target="_blank" href="http://texty.org.ua/d/2018/amber_eng/"><img style="width:90%;" src="img/leprosy.png"
+                                                                       class="img-responsive"
+                                                                       alt="Leprocy of the land"></a>
+    </div>
+    <div class="read-more-first">
+        <a target="_blank" href="http://texty.org.ua/d/2018/mnews/eng/"><img style="width:90%;"
+                                                                                                src="img/badnews.png"
+                                                                                                class="img-responsive"
+                                                                                                alt="We’ve got bad news!"></a>
+    </div>
+</div>
+
+
+<!-- Footer-->
+
+
+<div class="footer">
+    <ul class="links0">
+        <li id="big">&copy; 2019, Тексти.org.ua <br/>Медія для розумних</li>
+
+    </ul>
+
+
+    <ul class="links1">
+        <li><a href="http://texty.org.ua/mod/article/index.php?ed=1">Вибір редакції</a>
+            <a href="http://texty.org.ua/mod/article/?view=rss&amp;ed=1">(RSS)</a>
+        </li>
+        <li><a href="http://texty.org.ua/mod/video/">Відео</a>
+            <a href="http://texty.org.ua/mod/video/?view=rss">(RSS)</a>
+        </li>
+        <li><a href="http://texty.org.ua/mod/article/">Статті</a>
+            <a href="http://texty.org.ua/mod/article/?view=rss">(RSS)</a>
+        </li>
+        <li><a href="http://texty.org.ua/mod/news/">Новини</a>
+            <a href="http://texty.org.ua/mod/news/?view=rss">(RSS)</a>
+        </li>
+        <li><a href="http://texty.org.ua/mod/blog/everyone.php">Блоги</a>
+            <a href="http://texty.org.ua/mod/blog/blog_list.php?view=rss">(RSS)</a>
+        </li>
+    </ul>
+
+    <ul class="links2">
+        <li>
+            <a href="http://texty.org.ua/mod/archive/tag.php?tag=%D0%BA%D0%BE%D0%BD%D1%86%D0%B5%D0%BF%D1%86%D1%96%D1%8F">Концепції</a>
+        </li>
+        <li>
+            <a href="http://texty.org.ua/mod/archive/tag.php?tag=%D1%80%D0%B5%D1%84%D0%BE%D1%80%D0%BC%D0%B8">Реформи</a>
+        </li>
+        <li>
+            <a href="http://texty.org.ua/mod/archive/tag.php?tag=%D0%B4%D0%BE%D1%81%D0%B2%D1%96%D0%B4">Важливий
+                досвід</a></li>
+        <li>
+            <a href="http://texty.org.ua/mod/archive/tag.php?tag=%D1%96%D0%BD%D0%BE%D0%B7%D0%BC%D1%96">Найцікавіше
+                з інозмі</a></li>
+        <li><a href="http://texty.org.ua/pg/blog/infoviz">Журналістика даних</a></li>
+    </ul>
+
+
+    <ul class="links3">
+        <li><a id="orange" href="http://texty.org.ua/mod/pages/donate.php" class="support-site">Підтримай сайт
+            фінансово!</a></li>
+        <li><a href="http://facebook.com/texty.org.ua">Ми у Фейсбуці</a></li>
+        <li><a href="http://twitter.com/textyorgua">Ми у Твітері</a></li>
+        <li><a href="http://texty.org.ua/pg/pages/view/22">Про нас</a></li>
+        <li><a href="http://texty.org.ua/mod/archive/">Архів</a></li>
+    </ul>
+
+    <div class="copying-info">
+        Матеріали ТЕКСТИ.org.ua можна поширювати згідно з ліцензією Creative Commons з обов’язковим
+        посиланням. Велике прохання ставити гіперпосилання в першому чи другому абзаці вашого матеріалу.
+    </div>
+</div>
+
+<script>
+    setTimeout(function(){
+
+        var coverHeight = document.getElementById("cover").getBoundingClientRect().height;
+        document.getElementById("arrow-down").style.top = coverHeight - (window.innerWidth / 10) + "px";
+        $("#arrow-down").append('<img id="arrow-down-pic" title="scroll down" style="width:5vw;" src="../img/arrow-down2.png"/>');
+
+
+        window.addEventListener("resize", function(){
+            var newCoverHeight = document.getElementById("cover").getBoundingClientRect().height;
+            document.getElementById("arrow-down").style.top = newCoverHeight - (window.innerWidth/10) + "px";
+        });
+
+    },100);
+
+    $("#arrow-down").click(function() {
+        $('html,body').animate({
+                    scrollTop: $(".introduction").offset().top},
+                'slow');
+    });
+</script>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-18136548-1']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
