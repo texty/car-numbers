@@ -71,7 +71,7 @@ var annotations2 =
             "x": 30,
             "y": 50,
             "path": "M-32,57C-91,87,-136,78,-174,23",
-            "text": "пари на діагоналі, напр. 2828",
+            "text": "The diagonal pairs such as 2828",
             "textOffset": [
                 -132,
                 43
@@ -82,7 +82,7 @@ var annotations2 =
             "x": 55,
             "y": 55,
             "path": "M-242,54C-168,-22,-100,-14,-44,3",
-            "text": "трійки, напр. 5550, 5551",
+            "text": "“Three some in a row” such as 5550, 5551",
             "textOffset": [
                 -374,
                 72
@@ -97,7 +97,7 @@ var annotations3 =
             "x": 50,
             "y": 30,
             "path": "M-16,-118C-124,-118,-155,-118,-226,-118",
-            "text": "найменш заповнені коридори - номери з шістками",
+            "text": "The least filled corridors are the numbers containing “6”",
             "textOffset": [
                 4,
                 -114
@@ -637,6 +637,19 @@ var tangle = new Tangle (document.getElementById("calculator"), {
             this.result = sum + " авто"
     }
     }
+});
+
+jQuery(function() {
+    var getWindow = jQuery(window);
+    var windowHeight = getWindow.height();
+    jQuery(window).scroll(function(){
+        if(jQuery(window).scrollTop() > windowHeight ){
+            jQuery("#translate").css("display", "none");
+        } else {
+            jQuery("#translate").css("display", "flex");
+        }
+
+    });
 });
 
 

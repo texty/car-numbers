@@ -20,16 +20,6 @@ g.append("g")
 g.append("g")
     .attr("class", "axis axis--y");
 
-
-// var xAxisLabel = g.append("text");
-// // .attr("transform", "rotate(-90)")
-//
-// ;
-//
-//
-//
-// var yAxisLabel = g.append("text");
-
 d3.csv("./data/chart_data_1.csv", function(barChartData) {
 
 
@@ -94,12 +84,12 @@ function draw(theData) {
 
 
     g.append("text")
-        .attr("x", -5)
+        .attr("x", 0)
         .attr("y", 0 - 40)
         .attr("dy", "2.2em")
         .attr("text-anchor", "end")
-        .text("штук")
-        .style("font-size", "12px")
+        .text("Quantity")
+        .style("font-size", "11px")
         .style("font-style", "italic")
     ;
 
@@ -110,8 +100,8 @@ function draw(theData) {
         .attr("id", "x-axis-label")
         .attr("dy", "2.2em")
         .attr("text-anchor", "end")
-        .text("номери")
-        .style("font-size", "12px")
+        .text("Plate Number")
+        .style("font-size", "11px")
         .style("font-style", "italic")
     ;
 
@@ -139,7 +129,7 @@ function draw(theData) {
     ;
 
     barChart.selectAll("rect#y-axis-label-bg")
-        .attr("x", -3 - bb.width)
+        .attr("x", 0 - bb.width)
         .attr("y", 0 - 25)
         .attr("width", function(d) { return bb.width + paddingLeftRight; })
         .attr("height", function(d) { return bb.height + paddingTopBottom; })
