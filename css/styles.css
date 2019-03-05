@@ -11,7 +11,7 @@
   grid-column: 1/2; }
   @media (min-width: 1800px) {
     .logo {
-      width: 250px; } }
+      width: 200px; } }
   .logo a {
     height: 100%;
     display: flex; }
@@ -53,14 +53,14 @@
   grid-column: 2/3; }
   @media (min-width: 1800px) {
     .facebook {
-      width: 50px; } }
+      width: 40px; } }
 
 .twitter {
   width: 30px;
   grid-column: 3/4; }
   @media (min-width: 1800px) {
     .twitter {
-      width: 50px; } }
+      width: 40px; } }
 
 svg#facebook {
   z-index: 1000;
@@ -146,7 +146,7 @@ ul li {
       font-size: 15px !important; } }
   @media (min-width: 1800px) {
     ul li {
-      font-size: 20px; } }
+      font-size: 15px; } }
 
 ul li#big {
   text-align: left;
@@ -156,7 +156,7 @@ ul li#big {
       font-size: 15px !important; } }
   @media (min-width: 1800px) {
     ul li#big {
-      font-size: 20px; } }
+      font-size: 15px; } }
 
 ul.links0 {
   grid-column: 2/3;
@@ -203,7 +203,7 @@ ul.links3 li a#orange {
       font-size: 15px !important; } }
   @media (min-width: 1800px) {
     .copying-info {
-      font-size: 20px; } }
+      font-size: 15px; } }
 
 @media (min-width: 320px) and (max-width: 480px), (min-width: 768px) and (max-width: 1024px) {
   .links1, .links2, .links3 {
@@ -306,7 +306,7 @@ body {
         font-size: 18px; } }
     @media (min-width: 1800px) {
       .text-content p {
-        font-size: 25px; } }
+        font-size: 20px; } }
   .text-content h3 {
     margin: 50px auto 10px auto;
     font-size: 20px; }
@@ -442,7 +442,7 @@ table {
         font-size: 18px; } }
     @media (min-width: 1800px) {
       .scroll__text p {
-        font-size: 25px; } }
+        font-size: 20px; } }
   .scroll__text p, .scroll__text h3, .scroll__text h2 {
     width: 60%;
     margin: 10px auto; }
@@ -524,7 +524,7 @@ span.car-number {
         font-size: 20px !important; } }
     @media (min-width: 1800px) {
       #button h3 {
-        font-size: 30px; } }
+        font-size: 22px; } }
 
 #button-container {
   width: 100%;
@@ -545,7 +545,7 @@ span.car-number {
       font-size: 20px !important; } }
   @media (min-width: 1800px) {
     #support-us {
-      font-size: 30px; } }
+      font-size: 25px; } }
 
 .dashed-link {
   color: black !important;
